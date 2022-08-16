@@ -1,0 +1,43 @@
+.header {
+    background-color: #0e1a35;
+}
+
+.flex {
+    display: flex;
+}
+
+.flex-row {
+    flex-direction: row;
+}
+
+.flex-between {
+    justify-content: space-between;
+}
+
+.flex-evenly {
+    justify-content: space-evenly;
+}
+
+.text-white {
+    color: white;
+}
+
+.list-no-markers {
+    list-style-type: none
+}
+
+.nav {
+    width: 50%;
+}
+
+.nav-link{
+    cursor: pointer;
+}
+
+.padding-2-0{
+    padding: 2rem 0;
+}
+
+.padding-4-0 {
+    padding: 4rem 0;
+}
