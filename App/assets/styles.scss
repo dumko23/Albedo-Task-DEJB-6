@@ -37,7 +37,7 @@
 html {
     @extend %reset;
 
-    body{
+    body {
         @extend %reset;
 
         header {
@@ -45,40 +45,40 @@ html {
             background-image: url(images/Grid.png), url(images/Graph.png);
             background-size: cover, contain;
             background-repeat: no-repeat, no-repeat;
-            background-position: bottom, center;
+            background-position: top, center;
             height: 100vh;
-    
+
             nav {
                 @extend %div-center;
                 width: 80%;
-    
+
                 ul {
                     @include flex(row, space-between);
                     list-style-type: none;
                     color: white;
-    
+
                     .logo {
                         @extend %pointer;
                         padding: 2rem 0;
                     }
-    
+
                     div {
                         @include flex(row, space-evenly);
                         width: 50%;
-    
+
                         .nav-link {
                             @extend %pointer;
                             padding: 4rem 0;
                         }
-    
+
                         .nav-link:hover {
                             color: #5584ff;
                         }
-    
+
                         .login-btn {
                             @include active-button(#5584ff, #0e1a35);
-    
-    
+
+
                             a:hover,
                             a:active,
                             a {
@@ -86,56 +86,62 @@ html {
                                 text-decoration: none;
                             }
                         }
-    
+
                         .login-btn:hover {
                             background-color: #233a72;
                         }
                     }
                 }
             }
-    
+
             .header {
                 @extend %div-center;
                 @include flex(column, center);
-    
+
                 h1 {
                     @extend %text-center;
                     font-size: 2rem;
                     color: white;
                 }
-    
+
                 span {
                     @extend %text-center;
                     font-size: 1.5rem;
                     color: #8492af;
                 }
-    
+
                 .invite-btn {
                     @extend %div-center, %text-center;
                     @include active-button(white, #5584ff);
                     margin-top: 2rem;
                     text-decoration: none;
                 }
-    
+
                 .invite-btn:hover,
                 .invite-btn:active {
                     background-color: #233a72;
                 }
-    
+
             }
-    
+
             div {
+
                 img {
                     position: absolute;
-                
+                    width: 50%;
+                    height: 50%;
+                    left: 0;
+                    right: 0;
+                    margin: auto;
+                    box-shadow: 0px 0px 50px 9px rgba(253, 253, 253, 0.1);       
                 }
             }
-    
-    
-    
-    
+
+
+
+
         }
     }
 
-    
+
 }
