@@ -1,0 +1,141 @@
+@mixin active-button($main-color, $bck-color) {
+    color: $main-color;
+    background-color: $bck-color;
+    border: 1px solid #233a72;
+    border-radius: 1.75rem;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+    padding: 1rem 2rem;
+    cursor: pointer;
+}
+
+@mixin flex($direction, $justify) {
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $justify;
+}
+
+%pointer {
+    cursor: pointer;
+}
+
+%div-center {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+%text-center {
+    text-align: center;
+}
+
+%reset {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    @extend %reset;
+
+    body{
+        @extend %reset;
+
+        header {
+            background-color: #0e1a35;
+            background-image: url(images/Grid.png), url(images/Graph.png);
+            background-size: cover, contain;
+            background-repeat: no-repeat, no-repeat;
+            background-position: bottom, center;
+            height: 100vh;
+    
+            nav {
+                @extend %div-center;
+                width: 80%;
+    
+                ul {
+                    @include flex(row, space-between);
+                    list-style-type: none;
+                    color: white;
+    
+                    .logo {
+                        @extend %pointer;
+                        padding: 2rem 0;
+                    }
+    
+                    div {
+                        @include flex(row, space-evenly);
+                        width: 50%;
+    
+                        .nav-link {
+                            @extend %pointer;
+                            padding: 4rem 0;
+                        }
+    
+                        .nav-link:hover {
+                            color: #5584ff;
+                        }
+    
+                        .login-btn {
+                            @include active-button(#5584ff, #0e1a35);
+    
+    
+                            a:hover,
+                            a:active,
+                            a {
+                                color: #5584ff;
+                                text-decoration: none;
+                            }
+                        }
+    
+                        .login-btn:hover {
+                            background-color: #233a72;
+                        }
+                    }
+                }
+            }
+    
+            .header {
+                @extend %div-center;
+                @include flex(column, center);
+    
+                h1 {
+                    @extend %text-center;
+                    font-size: 2rem;
+                    color: white;
+                }
+    
+                span {
+                    @extend %text-center;
+                    font-size: 1.5rem;
+                    color: #8492af;
+                }
+    
+                .invite-btn {
+                    @extend %div-center, %text-center;
+                    @include active-button(white, #5584ff);
+                    margin-top: 2rem;
+                    text-decoration: none;
+                }
+    
+                .invite-btn:hover,
+                .invite-btn:active {
+                    background-color: #233a72;
+                }
+    
+            }
+    
+            div {
+                img {
+                    position: absolute;
+                
+                }
+            }
+    
+    
+    
+    
+        }
+    }
+
+    
+}
