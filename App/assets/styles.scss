@@ -15,6 +15,16 @@
     justify-content: $justify;
 }
 
+$color-grey-blue: #8492af;
+
+$color-dark-blue: #0e1a35;
+
+$color-light-blue: #5584ff;
+
+$color-medium-blue: #233a72;
+
+$color-grey: #dadee7;
+
 %pointer {
     cursor: pointer;
 }
@@ -35,7 +45,7 @@
 }
 
 %complex-back {
-    background-color: #0e1a35;
+    background-color: $color-dark-blue;
     background-image: url(images/Grid.png), url(images/Graph.png);
     background-size: cover, contain;
     background-repeat: no-repeat, no-repeat;
@@ -76,11 +86,11 @@ body {
                     }
 
                     .nav-link:hover {
-                        color: #5584ff;
+                        color: $color-light-blue;
                     }
 
                     .login-btn {
-                        @include active-button(#5584ff, #0e1a35, 3rem, 3rem, #233a72, 1rem 2rem);
+                        @include active-button($color-light-blue, $color-dark-blue, 3rem, 3rem, $color-medium-blue, 1rem 2rem);
 
 
                         a:hover,
@@ -88,13 +98,13 @@ body {
                         a {
 
                             margin: auto 0;
-                            color: #5584ff;
+                            color: $color-light-blue;
                             text-decoration: none;
                         }
                     }
 
                     .login-btn:hover {
-                        background-color: #233a72;
+                        background-color: $color-medium-blue;
                     }
                 }
             }
@@ -113,19 +123,19 @@ body {
             span {
                 @extend %text-center;
                 font-size: 1.5rem;
-                color: #8492af;
+                color: $color-grey-blue;
             }
 
             .invite-btn {
                 @extend %div-center, %text-center;
-                @include active-button(white, #5584ff, 3rem, 3rem, #233a72, 0.5rem 3rem);
+                @include active-button(white, $color-light-blue, 3rem, 3rem, $color-medium-blue, 0.5rem 3rem);
                 margin-top: 2rem;
                 text-decoration: none;
             }
 
             .invite-btn:hover,
             .invite-btn:active {
-                background-color: #233a72;
+                background-color: $color-medium-blue;
             }
 
         }
@@ -178,21 +188,21 @@ body {
 
                 p {
                     @extend %text-center;
-                    color: #8492af;
+                    color: $color-grey-blue;
                     padding: 1rem 0 4rem 0;
                 }
 
                 a:active,
                 a {
                     @extend %div-center;
-                    @include active-button(black, white, 1.5rem, 1rem, #dadee7, 1rem 2rem);
+                    @include active-button(black, white, 1.5rem, 1rem, $color-grey, 1rem 2rem);
                     color: black;
                     text-decoration: none;
                     font-weight: 600;
                 }
 
                 a:hover {
-                    background-color: #8492af;
+                    background-color: $color-grey;
                 }
             }
 
@@ -217,7 +227,7 @@ body {
                 }
 
                 p {
-                    color: #8492af;
+                    color: $color-grey-blue;
                     margin: 1.5rem 0;
                 }
 
@@ -225,7 +235,7 @@ body {
                     list-style-type: none;
 
                     li {
-                        color: #5584ff;
+                        color: $color-light-blue;
                         font-size: 1.15rem;
 
                         span {
@@ -291,7 +301,7 @@ body {
                         }
     
                         p{
-                            color: #8492af;
+                            color: $color-grey-blue;
                             margin-top: 1rem;
                         }
                     }
@@ -302,13 +312,13 @@ body {
                         bottom: 0;
 
                         .slide-btn{
+                            @extend %pointer; 
                             background: none;
                             color: white;
                             border-radius: 45%;
                             border-color: white;
                             border-width: 1px;
                             padding: 0.10rem 0.25rem;
-                            cursor: pointer;
                         }
 
                         #slide-right{
@@ -317,6 +327,86 @@ body {
                     }
                 }
             }
+        }
+
+        .template{
+            margin-top: 5rem;
+            height: 90vh;
+
+            .template-div{
+                width: 75%;
+                @extend %div-center;
+
+                span{
+                    @extend %text-center;
+                    display: block;
+                    font-size: 3rem;
+                    font-weight: 300;
+                }
+
+                p{
+                    @extend %text-center;
+                    color: $color-grey-blue;
+                    margin-top: 2rem;
+                }
+
+                .specifying-image{
+                    position: relative;
+                    margin-top: 3rem;
+                    background-image: url('images/Screen\ Mockup.png');
+                    background-position: center;
+                    background-size: contain;
+                    background-repeat: no-repeat;
+                    height: 50vh;
+                    @include flex(row, space-between);
+
+                    .layout{
+                        margin-top: 2rem;
+                        align-self: flex-start;
+                        width: 25%;
+                        
+                        span{
+                            font-size: 1rem;
+                            text-align: left;
+                            font-weight: 700;
+                        }
+
+                        img{
+                            width: 200%;
+                        }
+
+                        p{
+                            text-align: left;
+                            margin-top: 0.5rem;
+                        }
+                    }
+
+                    .customize{
+                        margin-bottom: 4rem;
+                        align-self: flex-end;
+                        width: 25%;
+                        position: relative;
+                        
+                        span{
+                            font-size: 1rem;
+                            text-align: right;
+                            font-weight: 700;
+                        }
+
+                        img{
+                            width: 200%;
+                            position: absolute;
+                            right: 0;
+                        }
+
+                        p{
+                            text-align: right;
+                            margin-top: 2rem;
+                        }
+                    }
+                }
+            }
+            
         }
     }
 }
