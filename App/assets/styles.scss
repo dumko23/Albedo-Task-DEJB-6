@@ -54,6 +54,7 @@ $color-grey: #dadee7;
 
 * {
     @extend %reset;
+    scroll-behavior: smooth;
 }
 
 body {
@@ -83,10 +84,17 @@ body {
                     .nav-link {
                         @extend %pointer;
                         padding: 4rem 0;
-                    }
+                        text-decoration: none;
 
-                    .nav-link:hover {
-                        color: $color-light-blue;
+                        a:active,
+                        a {
+                            color: white;
+                            text-decoration: none;
+                        }
+
+                        a:hover{
+                            color: $color-light-blue;
+                        }
                     }
 
                     .login-btn {
@@ -96,7 +104,6 @@ body {
                         a:hover,
                         a:active,
                         a {
-
                             margin: auto 0;
                             color: $color-light-blue;
                             text-decoration: none;
@@ -156,6 +163,7 @@ body {
     }
 
     main {
+
         .icons {
             @include flex(row, space-evenly);
             @extend %div-center;
@@ -334,7 +342,7 @@ body {
             height: 90vh;
 
             .template-div{
-                width: 75%;
+                width: 80%;
                 @extend %div-center;
 
                 span{
@@ -408,5 +416,7 @@ body {
             }
             
         }
+
+
     }
 }
