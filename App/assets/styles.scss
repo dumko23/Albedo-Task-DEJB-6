@@ -117,7 +117,7 @@ body {
             }
         }
 
-        .header {
+        .header-div {
             @extend %div-center;
             @include flex(column, center);
 
@@ -323,14 +323,15 @@ body {
                             @extend %pointer; 
                             background: none;
                             color: white;
-                            border-radius: 45%;
+                            border-radius: 50%;
                             border-color: white;
                             border-width: 1px;
-                            padding: 0.10rem 0.25rem;
+                            padding: 0.10rem 0.22rem;
+                            scale: 1.25;
                         }
 
                         #slide-right{
-                            margin-left: 0.5rem;
+                            margin-left: 1rem;
                         }
                     }
                 }
@@ -417,6 +418,140 @@ body {
             
         }
 
+        .pricing{
+            height: 100vh;
 
+            .pricing-main{
+                @extend %div-center;
+                @include flex(column, center);
+                padding-top: 3rem;
+                width: 80%;
+
+
+                h2{
+                    font-size: 3rem;
+                    font-weight: 300;
+                    @extend %text-center;
+                }
+
+                .pricing-div {
+                    @include flex(row, space-around);
+                    margin: 4rem 0;
+
+                    div{
+                        @extend %text-center, %pointer;
+                        width: 220px;
+                        height: 250px;
+                        box-shadow: 0px 0px 50px 9px rgba(76, 75, 121, 0.15);
+                        transition: 0.5s;
+
+
+                        h4{
+                            margin: 1rem 0;
+                        }
+
+                        span{
+                            color: $color-grey-blue;
+
+                            .dollar{
+                                font-size: 1.5rem;
+                                font-weight: 500;
+                                color: black;
+                            }
+
+                            .price{
+                                font-size: 2.5rem;
+                                font-weight: 600;
+                                color: black;
+                            }
+                        }
+
+                        ul{
+                            margin-top: 2rem;
+                            list-style-type: none;
+                            
+                            li{
+                                color: $color-grey-blue;
+                                margin: 0.5rem 0;
+                                font-size: 0.9rem;
+
+                                .fa-circle-check{
+                                    color: $color-light-blue;
+                                }
+
+                                .fa-circle-xmark{
+                                    color: #f83c7b;
+                                }
+                            }
+                        }
+                    }
+
+                    div:hover {
+                        transform: scale(1.1);
+                        transform-origin: center;
+                    }
+                }
+
+                p{
+                    @extend %text-center;
+                    color: $color-grey-blue;
+                }
+
+                .invite-btn {
+                    @extend %div-center, %text-center;
+                    @include active-button(white, $color-light-blue, 3rem, 3rem, $color-light-blue, 0.5rem 3rem);
+                    margin-top: 2rem;
+                    text-decoration: none;
+                }
+    
+                .invite-btn:hover,
+                .invite-btn:active {
+                    background-color: $color-medium-blue;
+                    border-color: $color-medium-blue;
+                }
+
+
+            }
+        }
+    }
+
+    footer{
+        margin-top: 2rem;
+        height: 15vh;
+        background-color: $color-dark-blue;
+
+        .footer-div{
+            @extend %div-center;
+            width: 80%;
+            align-items: center;
+            color: $color-grey-blue;
+            
+            ul{
+                @include flex(row, space-between);
+                list-style-type: none;
+                padding-top: 2.5rem;
+                font-size: 0.85rem;
+            
+
+                div{
+                    @include flex(row, space-around);
+                    width: 35%;
+                }
+
+                li{
+                    display: block;
+
+                    a:active,
+                        a {
+                            color: $color-grey-blue;
+                            text-decoration: none;
+                        }
+
+                        a:hover{
+                            color: $color-light-blue;
+                        }
+                }
+            }
+        }
     }
 }
