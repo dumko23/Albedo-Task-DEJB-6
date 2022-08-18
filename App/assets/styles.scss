@@ -15,6 +15,11 @@
     justify-content: $justify;
 }
 
+@mixin section-div($width) {
+    @extend %div-center;
+    width: $width;
+}
+
 $color-grey-blue: #8492af;
 
 $color-dark-blue: #0e1a35;
@@ -52,9 +57,17 @@ $color-grey: #dadee7;
     background-position: top, center;
 }
 
+%text-title {
+    font-size: 3rem;
+    font-weight: 100;
+}
+
 * {
     @extend %reset;
     scroll-behavior: smooth;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    line-height: 1.5;
 }
 
 body {
@@ -64,8 +77,7 @@ body {
         height: 100vh;
 
         nav {
-            @extend %div-center;
-            width: 95%;
+            @include section-div(90%);
 
             ul {
                 @include flex(row, space-between);
@@ -84,7 +96,6 @@ body {
                     .nav-link {
                         @extend %pointer;
                         padding: 4rem 0;
-                        text-decoration: none;
 
                         a:active,
                         a {
@@ -92,7 +103,7 @@ body {
                             text-decoration: none;
                         }
 
-                        a:hover{
+                        a:hover {
                             color: $color-light-blue;
                         }
                     }
@@ -118,13 +129,14 @@ body {
         }
 
         .header-div {
-            @extend %div-center;
+            @include section-div(90%);
             @include flex(column, center);
 
+
             h1 {
-                @extend %text-center;
-                font-size: 2rem;
+                @extend %text-center, %text-title;
                 color: white;
+                margin-bottom: 0.5rem;
             }
 
             span {
@@ -144,7 +156,6 @@ body {
             .invite-btn:active {
                 background-color: $color-medium-blue;
             }
-
         }
 
         div {
@@ -166,22 +177,21 @@ body {
 
         .icons {
             @include flex(row, space-evenly);
-            @extend %div-center;
-            width: 85%;
-            margin-top: 10rem;
+            @include section-div(85%);
+            margin-top: 5rem;
+            padding-top: 5rem;
 
             .card {
                 @extend %text-center;
-
                 width: 260px;
 
                 div {
                     @extend %div-center;
 
                     img {
+                        @extend %div-center;
                         width: 80px;
                         height: 76px;
-                        @extend %div-center;
                         margin-top: 1rem;
                         margin-bottom: 2rem;
                     }
@@ -213,14 +223,12 @@ body {
                     background-color: $color-grey;
                 }
             }
-
         }
 
         .example {
             @include flex(row, space-between);
-            @extend %div-center;
+            @include section-div(90%);
             margin-top: 15rem;
-            width: 90%;
             height: 70vh;
 
             .text-content {
@@ -231,7 +239,7 @@ body {
 
 
                 span {
-                    font-size: 2.5rem;
+                    @extend %text-title;
                 }
 
                 p {
@@ -245,6 +253,7 @@ body {
                     li {
                         color: $color-light-blue;
                         font-size: 1.15rem;
+                        margin: 0.5rem 0;
 
                         span {
                             font-size: 1rem;
@@ -253,14 +262,11 @@ body {
                                 margin-right: 1rem;
                             }
                         }
-
                     }
                 }
-
             }
 
             .img-left {
-
                 width: 50%;
 
                 img {
@@ -268,69 +274,63 @@ body {
                     right: 0;
                     width: 520px;
                     height: 350px;
-
-
-
-
                 }
             }
-
         }
 
         .drag-drop {
-            height: 70vh;
             @extend %complex-back;
+            height: 70vh;
 
-            .separator{
-                @extend %div-center;
+            .separator {
+                @include section-div(90%);
                 @include flex(row, none);
-                width: 90%;
 
-                div{
+                div {
                     margin-top: 5rem;
 
-                    img{
+                    img {
                         width: 500px;
                         height: 320px;
                     }
                 }
 
-                .scroller{
+                .scroller {
                     margin-right: 5rem;
                     margin-left: 5rem;
                     position: relative;
 
-                    div{
+                    div {
                         margin-top: 3rem;
-                    
+
                         span {
-                            font-size: 2rem;
+                            @extend %text-title;
                             color: white;
                         }
-    
-                        p{
+
+                        p {
                             color: $color-grey-blue;
                             margin-top: 1rem;
                         }
                     }
 
-                    .div-btn{
+                    .div-btn {
                         position: absolute;
                         margin-top: 0;
                         bottom: 0;
 
-                        .slide-btn{
-                            @extend %pointer; 
+                        .slide-btn {
+                            @extend %pointer;
                             background: none;
                             color: white;
                             border-radius: 50%;
                             border-color: white;
                             border-width: 1px;
-                            padding: 0.10rem 0.22rem;
+                            padding: 0.05rem 0.25rem 0.04rem;
                             scale: 1.25;
                         }
 
-                        #slide-right{
+                        #slide-right {
                             margin-left: 1rem;
                         }
                     }
@@ -338,28 +338,25 @@ body {
             }
         }
 
-        .template{
+        .template {
             margin-top: 5rem;
             height: 90vh;
 
-            .template-div{
-                width: 80%;
-                @extend %div-center;
+            .template-div {
+                @include section-div(80%);
 
-                span{
-                    @extend %text-center;
+                span {
+                    @extend %text-center, %text-title;
                     display: block;
-                    font-size: 3rem;
-                    font-weight: 300;
                 }
 
-                p{
+                p {
                     @extend %text-center;
                     color: $color-grey-blue;
                     margin-top: 2rem;
                 }
 
-                .specifying-image{
+                .specifying-image {
                     position: relative;
                     margin-top: 3rem;
                     background-image: url('images/Screen\ Mockup.png');
@@ -369,117 +366,117 @@ body {
                     height: 50vh;
                     @include flex(row, space-between);
 
-                    .layout{
+                    .layout {
                         margin-top: 2rem;
                         align-self: flex-start;
                         width: 25%;
-                        
-                        span{
+                        position: relative;
+
+                        span {
                             font-size: 1rem;
                             text-align: left;
                             font-weight: 700;
                         }
 
-                        img{
+                        img {
                             width: 200%;
+                            position: absolute;
+                            left: 0;
                         }
 
-                        p{
+                        p {
                             text-align: left;
-                            margin-top: 0.5rem;
+                            margin-top: 2rem;
                         }
                     }
 
-                    .customize{
+                    .customize {
                         margin-bottom: 4rem;
                         align-self: flex-end;
                         width: 25%;
                         position: relative;
-                        
-                        span{
+
+                        span {
                             font-size: 1rem;
                             text-align: right;
                             font-weight: 700;
                         }
 
-                        img{
+                        img {
                             width: 200%;
                             position: absolute;
                             right: 0;
                         }
 
-                        p{
+                        p {
                             text-align: right;
                             margin-top: 2rem;
                         }
                     }
                 }
             }
-            
+
         }
 
-        .pricing{
+        .pricing {
             height: 100vh;
 
-            .pricing-main{
-                @extend %div-center;
+            .pricing-main {
+                @include section-div(80%);
                 @include flex(column, center);
                 padding-top: 3rem;
-                width: 80%;
 
-
-                h2{
-                    font-size: 3rem;
-                    font-weight: 300;
-                    @extend %text-center;
+                h2 {
+                    @extend %text-center, %text-title;
                 }
 
                 .pricing-div {
                     @include flex(row, space-around);
                     margin: 4rem 0;
 
-                    div{
+                    div {
                         @extend %text-center, %pointer;
-                        width: 220px;
+                        width: 240px;
                         height: 250px;
                         box-shadow: 0px 0px 50px 9px rgba(76, 75, 121, 0.15);
                         transition: 0.5s;
 
 
-                        h4{
-                            margin: 1rem 0;
+                        h4 {
+                            margin-top: 1.5rem;
+                            margin-bottom: 1rem;
+                            font-weight: 500;
                         }
 
-                        span{
+                        span {
                             color: $color-grey-blue;
 
-                            .dollar{
-                                font-size: 1.5rem;
+                            .dollar {
+                                font-size: 1rem;
                                 font-weight: 500;
                                 color: black;
                             }
 
-                            .price{
-                                font-size: 2.5rem;
+                            .price {
+                                font-size: 2rem;
                                 font-weight: 600;
                                 color: black;
                             }
                         }
 
-                        ul{
-                            margin-top: 2rem;
+                        ul {
+                            margin-top: 1.5rem;
                             list-style-type: none;
-                            
-                            li{
+
+                            li {
                                 color: $color-grey-blue;
-                                margin: 0.5rem 0;
                                 font-size: 0.9rem;
 
-                                .fa-circle-check{
+                                .fa-circle-check {
                                     color: $color-light-blue;
                                 }
 
-                                .fa-circle-xmark{
+                                .fa-circle-xmark {
                                     color: #f83c7b;
                                 }
                             }
@@ -492,9 +489,11 @@ body {
                     }
                 }
 
-                p{
+                p {
                     @extend %text-center;
+                    width: 70%;
                     color: $color-grey-blue;
+                    align-self: center;
                 }
 
                 .invite-btn {
@@ -503,55 +502,56 @@ body {
                     margin-top: 2rem;
                     text-decoration: none;
                 }
-    
+
                 .invite-btn:hover,
                 .invite-btn:active {
                     background-color: $color-medium-blue;
                     border-color: $color-medium-blue;
                 }
-
-
             }
         }
     }
 
-    footer{
+    footer {
         margin-top: 2rem;
         height: 15vh;
         background-color: $color-dark-blue;
 
-        .footer-div{
-            @extend %div-center;
-            width: 80%;
+        .footer-div {
+            @include section-div(80%);
             align-items: center;
             color: $color-grey-blue;
-            
-            ul{
+
+            ul {
                 @include flex(row, space-between);
                 list-style-type: none;
                 padding-top: 2.5rem;
                 font-size: 0.85rem;
-            
 
-                div{
+
+                div {
                     @include flex(row, space-around);
                     width: 35%;
                 }
 
-                li{
+                li {
                     display: block;
 
                     a:active,
-                        a {
-                            color: $color-grey-blue;
-                            text-decoration: none;
-                        }
+                    a {
+                        color: $color-grey-blue;
+                        text-decoration: none;
+                    }
 
-                        a:hover{
-                            color: $color-light-blue;
-                        }
+                    a:hover {
+                        color: $color-light-blue;
+                    }
                 }
             }
         }
     }
+}
+
+@media (max-width: 768px) {
+    
 }
