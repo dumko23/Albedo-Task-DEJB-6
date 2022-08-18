@@ -1016,3 +1016,24 @@ body {
         }
     }
 }
+
+@media (max-width: 375px) {
+    body main{
+        .example .img-left img{
+            width: 365px;
+            height: 280px;
+        }
+
+        .template .template-div .specifying-image{
+            margin-top: 4rem;
+
+            .layout{
+                top: -2rem;
+            }
+
+            .customize{
+                top: -2rem;
+            }
+        }
+    } 
+}
