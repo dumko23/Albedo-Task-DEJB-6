@@ -34,8 +34,6 @@ function slide(direction = null) {
     document.getElementById(slides[currentSlide]).style.display = 'block';
 }
 
-let showMenu = false;
-
 document
     .getElementById('burger')
     .addEventListener('click', function () {
@@ -45,22 +43,28 @@ document
 document
     .getElementById('xmark')
     .addEventListener('click', function () {
-        toggleMenu(true);
+        toggleMenu(false);
     })
     ;
-toggleMenu();
+window.addEventListener('resize', function () {
+    toggleMenu(false);
+});
+
+toggleMenu(false);
 
 function toggleMenu(toggle = '') {
-    if (toggle === true) {
-        showMenu = !showMenu;
-    }
-    if (showMenu === false) {
+    if (toggle === false) {
         document.getElementById('burger').style.display = 'block';
         document.getElementById('xmark').style.display = 'none';
         document.getElementById('nav-div').style.display = 'none';
-    } else if (showMenu === true) {
+    } else if (toggle === true) {
         document.getElementById('burger').style.display = 'none';
         document.getElementById('xmark').style.display = 'block';
         document.getElementById('nav-div').style.display = 'block';
+    }
+    let menu = window.getComputedStyle(document.getElementById('menu'));
+    if (menu['display'] === 'none') {
+        console.log(menu['display'])
+        document.getElementById('nav-div').style.display = 'flex';
     }
 }

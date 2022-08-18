@@ -84,49 +84,52 @@ body {
                 list-style-type: none;
                 color: white;
 
-                .menu {
-                    display: none;
-                }
-
                 .logo {
                     @extend %pointer;
                     padding: 2rem 0;
                 }
 
-                .nav-div {
-                    @include flex(row, space-evenly);
+                .div-collapse {
                     width: 50%;
 
-                    .nav-link {
-                        @extend %pointer;
-                        padding: 4rem 0;
-
-                        a:active,
-                        a {
-                            color: white;
-                            text-decoration: none;
-                        }
-
-                        a:hover {
-                            color: $color-light-blue;
-                        }
+                    .menu {
+                        display: none;
                     }
 
-                    .login-btn {
-                        @include active-button($color-light-blue, $color-dark-blue, 3rem, 3rem, $color-medium-blue, 1rem 2rem);
+                    .nav-div {
+                        @include flex(row, space-evenly);
 
+                        .nav-link {
+                            @extend %pointer;
+                            padding: 4rem 0;
 
-                        a:hover,
-                        a:active,
-                        a {
-                            margin: auto 0;
-                            color: $color-light-blue;
-                            text-decoration: none;
+                            a:active,
+                            a {
+                                color: white;
+                                text-decoration: none;
+                            }
+
+                            a:hover {
+                                color: $color-light-blue;
+                            }
                         }
-                    }
 
-                    .login-btn:hover {
-                        background-color: $color-medium-blue;
+                        .login-btn {
+                            @include active-button($color-light-blue, $color-dark-blue, 3rem, 3rem, $color-medium-blue, 1rem 2rem);
+
+
+                            a:hover,
+                            a:active,
+                            a {
+                                margin: auto 0;
+                                color: $color-light-blue;
+                                text-decoration: none;
+                            }
+                        }
+
+                        .login-btn:hover {
+                            background-color: $color-medium-blue;
+                        }
                     }
                 }
             }
@@ -723,11 +726,7 @@ body {
     body {
 
         header {
-
-
             nav {
-
-
                 ul {
                     .logo {
                         padding: 1rem 0;
@@ -735,7 +734,7 @@ body {
                     }
 
                     .div-collapse {
-                        @include flex(column, none);
+                        @include flex(none, center);
                         align-self: center;
 
                         .menu {
@@ -744,12 +743,11 @@ body {
 
                             span {
                                 font-size: 2rem;
-                                margin-right: 2rem;
                                 width: 2rem;
                             }
                         }
 
-                        #nav-div{
+                        #nav-div {
                             display: none;
                         }
 
@@ -757,10 +755,11 @@ body {
                             @include flex(column, center);
                             width: 100px;
                             position: absolute;
-                            right: 2rem;
+                            right: 4rem;
                             background-color: $color-dark-blue;
                             border: 1px solid $color-light-blue;
                             padding: 0.5rem;
+                            margin-top: 3rem;
 
                             .nav-link {
                                 padding: 0;
@@ -771,7 +770,7 @@ body {
                             .login-btn {
                                 margin: 0;
                                 text-align: center;
-
+                                padding: 0.5rem;
                             }
                         }
                     }
@@ -794,6 +793,63 @@ body {
                 width: 75%;
                 height: 50%;
                 top: 350px;
+            }
+        }
+
+        main {
+
+
+            .drag-drop {
+                height: 100vh;
+
+                .separator {
+                    flex-direction: column;
+                    align-items: center;
+
+                    div {
+                        margin-top: 5rem;
+
+                        img {
+                            width: 370px;
+                            height: 220px;
+                        }
+                    }
+
+                    .scroller {
+                        margin-top: 0;
+                        width: 80%;
+
+                        div {
+                            margin-top: 0;
+
+                            .slide-div {
+                                text-align: center;
+                                height: 5rem;
+                            }
+                        }
+
+                        .div-btn {
+                            bottom: -8rem;
+                            position: absolute;
+                            display: flex;
+                            flex-direction: row;
+                            justify-content: space-evenly;
+                            width: 100%;
+                           
+
+                            .slide-btn {
+                                scale: 1;
+                                font-size: 2rem;
+                                padding: 0.5rem 0.75rem;
+
+                            }
+
+                            #slide-right{
+                                margin-left: 0;
+                            }
+                        }
+                    }
+                }
             }
         }
     }
