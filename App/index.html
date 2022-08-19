@@ -15,8 +15,8 @@
 
 <body>
     <header>
-        <nav>
-            <ul>
+        <nav class="nav-bar">
+            <ul class="nav-list">
                 <li><a href="/"><img src="assets/images/Logo.png" alt="Merkury Logo" class="logo"></a></li>
                 <div class="div-collapse">
                     <div id="menu" class="menu">
@@ -24,19 +24,19 @@
                         <span id="xmark"><i class="fa-solid fa-xmark"></i></span>
                     </div>
                     <div id="nav-div" class="nav-div">
-                        <li class="nav-link"><a href="#features">Features</a></li>
-                        <li class="nav-link"><a href="#pricing">Pricing</a></li>
-                        <li class="nav-link"><a href="#">Blog</a></li>
-                        <li class="nav-link"><a href="#">Contact</a></li>
-                        <li class="login-btn"><a href="#">Login</a></li>
+                        <li><a class="nav-link" href="#features">Features</a></li>
+                        <li><a class="nav-link" href="#pricing">Pricing</a></li>
+                        <li><a class="nav-link" href="#">Blog</a></li>
+                        <li><a class="nav-link" href="#">Contact</a></li>
+                        <li><a class="login-btn" href="#">Login</a></li>
                     </div>
                 </div>
             </ul>
         </nav>
 
         <div class="header-div">
-            <h1>Grow yout business with Merkury</h1>
-            <span>Your partner in crime!</span>
+            <h1 class="header-title">Grow yout business with Merkury</h1>
+            <span class="header-text">Your partner in crime!</span>
             <a href="#" class="invite-btn">Get started</a>
         </div>
 
@@ -49,46 +49,48 @@
         <section class="icons" id="features">
             <div class="card">
                 <div>
-                    <img src="assets/images/Inteligentny obiekt wektorowy.png" alt="feature icon">
+                    <img class="icon-img" class="header-image" src="assets/images/Inteligentny obiekt wektorowy.png"
+                        alt="feature icon">
                 </div>
-
-                <span>Manage your workflow</span>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus, totam.</p>
-                <a href="#">See more</a>
-
-
+                <span class="icon-title">Manage your workflow</span>
+                <p class="icon-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus, totam.</p>
+                <a class="icon-btn" href="#">See more</a>
             </div>
 
             <div class="card">
                 <div>
-                    <img src="assets/images/Inteligentny obiekt wektorowy2.png" alt="feature icon">
+                    <img class="icon-img" src="assets/images/Inteligentny obiekt wektorowy2.png" alt="feature icon">
                 </div>
-                <span>Analytics & Insights</span>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam, id?</p>
-                <a href="#">See more</a>
+                <span class="icon-title">Analytics & Insights</span>
+                <p class="icon-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam, id?</p>
+                <a class="icon-btn" href="#">See more</a>
             </div>
 
             <div class="card">
                 <div>
-                    <img src="assets/images/Inteligentny obiekt wektorowy3.png" alt="feature icon">
+                    <img class="icon-img" src="assets/images/Inteligentny obiekt wektorowy3.png" alt="feature icon">
                 </div>
-                <span>Organize your deadlines</span>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem, voluptates.</p>
-                <a href="#">See more</a>
+                <span class="icon-title">Organize your deadlines</span>
+                <p class="icon-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem, voluptates.</p>
+                <a class="icon-btn" href="#">See more</a>
             </div>
         </section>
 
         <section class="example">
             <div class="text-content">
-                <span>All You need is a browser!</span>
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Maxime rerum illum qui culpa ex dolores
+                <span class="example-title">All You need is a browser!</span>
+                <p class="example-text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Maxime rerum illum qui
+                    culpa ex dolores
                     repellat architecto earum voluptate aliquid?</p>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad similique libero officiis delectus.
+                <p class="example-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad similique libero
+                    officiis delectus.
                     Accusantium temporibus quas ipsam ea?</p>
-                <ul>
-                    <li><span><i class="fa-regular fa-circle-check"></i></span>Lorem ipsum dolor sit amet consectetur.
+                <ul class="example-list">
+                    <li class="list-item">
+                        <span><i class="fa-regular fa-circle-check"></i></span>Lorem ipsum dolor sit amet consectetur.
                     </li>
-                    <li><span><i class="fa-regular fa-circle-check"></i></span>Lorem ipsum dolor sit amet consectetur
+                    <li class="list-item">
+                        <span><i class="fa-regular fa-circle-check"></i></span>Lorem ipsum dolor sit amet consectetur
                         adipisicing.
                     </li>
                 </ul>
@@ -100,29 +102,32 @@
 
         <section class="drag-drop">
             <div class="separator">
-                <div><img src="assets/images/Workflow.png" alt="Workflow drag&rdop task baar"></div>
+                <div class="dashboard-div">
+                    <img class="dashboard-img" src="assets/images/Workflow.png" alt="Workflow drag&rdop task baar">
+                </div>
                 <div class="scroller">
-                    <div>
+                    <div class="slide-bar">
                         <div class="slide-div" id="slide-1">
-                            <span>Lorem ipsum dolor sit.</span>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing.</p>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis.</p>
+                            <span class="slide-title">Lorem ipsum dolor sit.</span>
+                            <p class="slide-text">Lorem ipsum dolor sit amet consectetur adipisicing.</p>
+                            <p class="slide-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis.</p>
                         </div>
                         <div class="slide-div" id="slide-2">
-                            <span>Lorem, ipsum dolor.</span>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-                            <p>Lorem ipsum dolor sit amet consectetur.</p>
+                            <span class="slide-title">Lorem, ipsum dolor.</span>
+                            <p class="slide-text">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                            <p class="slide-text">Lorem ipsum dolor sit amet consectetur.</p>
                         </div>
                         <div class="slide-div" id="slide-3">
-                            <span>Lorem, ipsum.</span>
-                            <p>Lorem ipsum dolor sit amet consectetur.</p>
-                            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Rem, quasi?</p>
+                            <span class="slide-title">Lorem, ipsum.</span>
+                            <p class="slide-text">Lorem ipsum dolor sit amet consectetur.</p>
+                            <p class="slide-text">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Rem, quasi?</p>
                         </div>
                     </div>
 
                     <div class="div-btn">
                         <button class="slide-btn" id="slide-left"><i class="fa-solid fa-caret-left"></i></button>
-                        <button class="slide-btn" id="slide-right"><i class="fa-solid fa-caret-right"></i></button>
+                        <button class="slide-btn slide-right" id="slide-right"><i
+                                class="fa-solid fa-caret-right"></i></button>
                     </div>
                 </div>
             </div>
@@ -130,23 +135,23 @@
 
         <section class="template">
             <div class="template-div">
-                <span>Powerfull PSD Template</span>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo nobis, aspernatur est dolores,
+                <span class="template-title">Powerfull PSD Template</span>
+                <p class="template-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo nobis, aspernatur est dolores,
                     nemo
                     facilis iste distinctio accusamus quasi autem repudiandae minima quia! Nam possimus voluptas facere
                     consectetur porro delectus error illo accusamus pariatur! Assumenda laboriosam, maxime nemo quod
                     fuga et
                     sint, beatae consequatur iusto necessitatibus delectus quisquam exercitationem pariatur!</p>
                 <div class="specifying-image">
-                    <div class="layout">
-                        <span>Clean & modern layout</span>
-                        <img src="assets/images/left-line.png" alt="Line leading to the image">
-                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vitae, vero.</p>
+                    <div class="option-div layout">
+                        <span class="option-title left">Clean & modern layout</span>
+                        <img class="option-img option-img-left" src="assets/images/left-line.png" alt="Line leading to the image">
+                        <p class="option-text left">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vitae, vero.</p>
                     </div>
-                    <div class="customize">
-                        <span>Easy to customize</span>
-                        <img src="assets/images/right-line.png" alt="Line leading to the image">
-                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquam, cumque at.</p>
+                    <div class="option-div customize">
+                        <span class="option-title right">Easy to customize</span>
+                        <img class="option-img option-img-right" src="assets/images/right-line.png" alt="Line leading to the image">
+                        <p class="option-text right">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquam, cumque at.</p>
                     </div>
                 </div>
             </div>
@@ -154,42 +159,42 @@
 
         <section class="pricing" id="pricing">
             <div class="pricing-main">
-                <h2>Check our pricing!</h2>
+                <h2 class="pricing-title">Check our pricing!</h2>
                 <div class="pricing-div">
-                    <div>
-                        <h4>BRONZE PLAN</h4>
-                        <span><span class="dollar">$</span><span class="price">19</span>/mon</span>
-                        <ul>
-                            <li><span><i class="fa-regular fa-circle-check"></i></span> Lorem ipsum dolor sit amet.</li>
-                            <li><span><i class="fa-regular fa-circle-check"></i></span> Lorem ipsum dolor sit amet.</li>
-                            <li><span><i class="fa-regular fa-circle-xmark"></i></span> Lorem ipsum dolor sit amet.</li>
-                            <li><span><i class="fa-regular fa-circle-xmark"></i></span> Lorem ipsum dolor sit amet.</li>
+                    <div class="pricing-card">
+                        <h4 class="pricing-card-title">BRONZE PLAN</h4>
+                        <span class="price-text"><span class="dollar">$</span><span class="price">19</span>/mon</span>
+                        <ul class="card-list">
+                            <li class="card-item"><span><i class="fa-regular fa-circle-check"></i></span> Lorem ipsum dolor sit amet.</li>
+                            <li class="card-item"><span><i class="fa-regular fa-circle-check"></i></span> Lorem ipsum dolor sit amet.</li>
+                            <li class="card-item"><span><i class="fa-regular fa-circle-xmark"></i></span> Lorem ipsum dolor sit amet.</li>
+                            <li class="card-item"><span><i class="fa-regular fa-circle-xmark"></i></span> Lorem ipsum dolor sit amet.</li>
                         </ul>
                     </div>
 
-                    <div>
-                        <h4>SILVER PLAN</h4>
-                        <span><span class="dollar">$</span><span class="price">49</span>/mon</span>
-                        <ul>
-                            <li><span><i class="fa-regular fa-circle-check"></i></span> Lorem ipsum dolor sit amet.</li>
-                            <li><span><i class="fa-regular fa-circle-check"></i></span> Lorem ipsum dolor sit amet.</li>
-                            <li><span><i class="fa-regular fa-circle-check"></i></span> Lorem ipsum dolor sit amet.</li>
-                            <li><span><i class="fa-regular fa-circle-xmark"></i></span> Lorem ipsum dolor sit amet.</li>
+                    <div class="pricing-card">
+                        <h4 class="pricing-card-title">SILVER PLAN</h4>
+                        <span class="price-text"><span class="dollar">$</span><span class="price">49</span>/mon</span>
+                        <ul class="card-list">
+                            <li class="card-item"><span><i class="fa-regular fa-circle-check"></i></span> Lorem ipsum dolor sit amet.</li>
+                            <li class="card-item"><span><i class="fa-regular fa-circle-check"></i></span> Lorem ipsum dolor sit amet.</li>
+                            <li class="card-item"><span><i class="fa-regular fa-circle-check"></i></span> Lorem ipsum dolor sit amet.</li>
+                            <li class="card-item"><span><i class="fa-regular fa-circle-xmark"></i></span> Lorem ipsum dolor sit amet.</li>
                         </ul>
                     </div>
 
-                    <div>
-                        <h4>GOLD PLAN</h4>
-                        <span><span class="dollar">$</span><span class="price">99</span>/mon</span>
-                        <ul>
-                            <li><span><i class="fa-regular fa-circle-check"></i></span> Lorem ipsum dolor sit amet.</li>
-                            <li><span><i class="fa-regular fa-circle-check"></i></span> Lorem ipsum dolor sit amet.</li>
-                            <li><span><i class="fa-regular fa-circle-check"></i></span> Lorem ipsum dolor sit amet.</li>
-                            <li><span><i class="fa-regular fa-circle-check"></i></span> Lorem ipsum dolor sit amet.</li>
+                    <div class="pricing-card">
+                        <h4 class="pricing-card-title">GOLD PLAN</h4>
+                        <span class="price-text"><span class="dollar">$</span><span class="price">99</span>/mon</span>
+                        <ul class="card-list">
+                            <li class="card-item"><span><i class="fa-regular fa-circle-check"></i></span> Lorem ipsum dolor sit amet.</li>
+                            <li class="card-item"><span><i class="fa-regular fa-circle-check"></i></span> Lorem ipsum dolor sit amet.</li>
+                            <li class="card-item"><span><i class="fa-regular fa-circle-check"></i></span> Lorem ipsum dolor sit amet.</li>
+                            <li class="card-item"><span><i class="fa-regular fa-circle-check"></i></span> Lorem ipsum dolor sit amet.</li>
                         </ul>
                     </div>
                 </div>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam deleniti vel adipisci molestiae.
+                <p class="pricing-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam deleniti vel adipisci molestiae.
                     Veniam, iusto!</p>
                 <a class="invite-btn" href="#">Join now!</a>
             </div>
@@ -197,15 +202,15 @@
     </main>
     <footer>
         <div class="footer-div">
-            <ul>
-                <li>&copy; 2016 Merkury All Right Reserved</li>
-                <div>
-                    <li><a href="#pricing">Pricing</a></li>
-                    <li><a href="#">Blog</a></li>
-                    <li><a href="#">Contact</a></li>
-                    <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
-                    <li><a href="#"><i class="fa-brands fa-twitter"></i></a></li>
-                    <li><a href="#"><i class="fa-brands fa-google-plus-g"></i></a></li>
+            <ul class="footer-list">
+                <li class="footer-item">&copy; 2016 Merkury All Right Reserved</li>
+                <div class="links-div">
+                    <li class="footer-item"><a class="footer-link" href="#pricing">Pricing</a></li>
+                    <li class="footer-item"><a class="footer-link" href="#">Blog</a></li>
+                    <li class="footer-item"><a class="footer-link" href="#">Contact</a></li>
+                    <li class="footer-item"><a class="footer-link" href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
+                    <li class="footer-item"><a class="footer-link" href="#"><i class="fa-brands fa-twitter"></i></a></li>
+                    <li class="footer-item"><a class="footer-link" href="#"><i class="fa-brands fa-google-plus-g"></i></a></li>
                 </div>
             </ul>
         </div>

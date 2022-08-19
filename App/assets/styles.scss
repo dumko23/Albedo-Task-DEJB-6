@@ -6,6 +6,7 @@
     margin-top: $m-top;
     margin-bottom: $m-bot;
     padding: $padding;
+    text-decoration: none;
     cursor: pointer;
 }
 
@@ -18,6 +19,11 @@
 @mixin section-div($width) {
     @extend %div-center;
     width: $width;
+}
+
+@mixin list-flex-nomarks($direction, $justify) {
+    @include flex($direction, $justify);
+    list-style-type: none;
 }
 
 $color-grey-blue: #8492af;
@@ -43,6 +49,11 @@ $color-grey: #dadee7;
     text-align: center;
 }
 
+%text-title {
+    font-size: 3rem;
+    font-weight: 100;
+}
+
 %reset {
     box-sizing: border-box;
     margin: 0;
@@ -57,9 +68,12 @@ $color-grey: #dadee7;
     background-position: top, center;
 }
 
-%text-title {
-    font-size: 3rem;
-    font-weight: 100;
+%text-main-color {
+    color: $color-grey-blue;
+}
+
+%text-content-center {
+    @extend %text-center, %text-main-color;
 }
 
 * {
@@ -76,17 +90,17 @@ body {
         @extend %complex-back;
         height: 100vh;
 
-        nav {
+        .nav-bar {
             @include section-div(90%);
 
-            ul {
-                @include flex(row, space-between);
-                list-style-type: none;
+            .nav-list {
+                @include list-flex-nomarks(row, space-between);
                 color: white;
+                align-items: center;
+                padding: 2rem 0;
 
                 .logo {
                     @extend %pointer;
-                    padding: 2rem 0;
                 }
 
                 .div-collapse {
@@ -99,32 +113,22 @@ body {
                     .nav-div {
                         @include flex(row, space-evenly);
 
-                        .nav-link {
+                        .nav-link,
+                        .nav-link:active {
                             @extend %pointer;
-                            padding: 4rem 0;
+                            color: white;
+                            text-decoration: none;
 
-                            a:active,
-                            a {
-                                color: white;
-                                text-decoration: none;
-                            }
-
-                            a:hover {
+                            &:hover {
                                 color: $color-light-blue;
                             }
                         }
 
-                        .login-btn {
+                        .login-btn,
+                        .login-btn:active {
                             @include active-button($color-light-blue, $color-dark-blue, 3rem, 3rem, $color-medium-blue, 1rem 2rem);
-
-
-                            a:hover,
-                            a:active,
-                            a {
-                                margin: auto 0;
-                                color: $color-light-blue;
-                                text-decoration: none;
-                            }
+                            margin: auto 0;
+                            color: $color-light-blue;
                         }
 
                         .login-btn:hover {
@@ -139,29 +143,26 @@ body {
             @include section-div(90%);
             @include flex(column, center);
 
-
-            h1 {
+            .header-title {
                 @extend %text-center, %text-title;
                 color: white;
                 margin-bottom: 0.5rem;
             }
 
-            span {
-                @extend %text-center;
+            .header-text {
+                @extend %text-content-center;
                 font-size: 1.5rem;
-                color: $color-grey-blue;
             }
 
             .invite-btn {
                 @extend %div-center, %text-center;
                 @include active-button(white, $color-light-blue, 3rem, 3rem, $color-medium-blue, 0.5rem 3rem);
                 margin-top: 2rem;
-                text-decoration: none;
-            }
 
-            .invite-btn:hover,
-            .invite-btn:active {
-                background-color: $color-medium-blue;
+                &:hover,
+                &:active {
+                    background-color: $color-medium-blue;
+                }
             }
         }
 
@@ -195,7 +196,7 @@ body {
                 div {
                     @extend %div-center;
 
-                    img {
+                    .icon-img {
                         @extend %div-center;
                         width: 80px;
                         height: 76px;
@@ -204,30 +205,28 @@ body {
                     }
                 }
 
-                span {
+                .icon-title {
                     @extend %text-center;
                     padding-bottom: 0.25rem;
                     font-size: 1.2rem;
                     font-weight: 700;
                 }
 
-                p {
-                    @extend %text-center;
-                    color: $color-grey-blue;
+                .icon-text {
+                    @extend %text-content-center;
                     padding: 1rem 0 4rem 0;
                 }
 
-                a:active,
-                a {
+                .icon-btn:active,
+                .icon-btn {
                     @extend %div-center;
                     @include active-button(black, white, 1.5rem, 1rem, $color-grey, 1rem 2rem);
                     color: black;
-                    text-decoration: none;
                     font-weight: 600;
-                }
 
-                a:hover {
-                    background-color: $color-grey;
+                    &:hover {
+                        background-color: $color-grey;
+                    }
                 }
             }
         }
@@ -235,7 +234,7 @@ body {
         .example {
             @include flex(row, space-between);
             @include section-div(90%);
-            margin-top: 15rem;
+            margin-top: 10rem;
             height: 70vh;
 
             .text-content {
@@ -245,29 +244,27 @@ body {
                 margin-left: 1rem;
 
 
-                span {
+                .example-title {
                     @extend %text-title;
                 }
 
-                p {
-                    color: $color-grey-blue;
+                .example-text {
+                    @extend %text-main-color;
                     margin: 1.5rem 0;
                 }
 
-                ul {
+                .example-list {
                     list-style-type: none;
 
-                    li {
+                    .list-item {
                         color: $color-light-blue;
-                        font-size: 1.15rem;
+                        font-size: 1rem;
+                        line-height: 1rem;
                         margin: 0.5rem 0;
 
-                        span {
+                        .fa-circle-check {
                             font-size: 1rem;
-
-                            i {
-                                margin-right: 1rem;
-                            }
+                            margin-right: 1rem;
                         }
                     }
                 }
@@ -287,37 +284,43 @@ body {
 
         .drag-drop {
             @extend %complex-back;
+            @include flex(row, none);
             height: 70vh;
+            margin-top: 2rem;
 
             .separator {
                 @include section-div(90%);
                 @include flex(row, none);
+                align-self: center;
 
-                div {
+                .dashboard-div {
                     margin-top: 5rem;
 
-                    img {
+                    .dashboard-img {
                         width: 500px;
                         height: 320px;
                     }
                 }
 
                 .scroller {
-                    margin-right: 5rem;
-                    margin-left: 5rem;
+                    margin-right: 3rem;
+                    margin-left: 3rem;
                     position: relative;
 
-                    div {
-                        margin-top: 3rem;
+                    .slide-bar {
 
-                        span {
-                            @extend %text-title;
-                            color: white;
-                        }
+                        .slide-div {
+                            margin-top: 2rem;
 
-                        p {
-                            color: $color-grey-blue;
-                            margin-top: 1rem;
+                            .slide-title {
+                                @extend %text-title;
+                                color: white;
+                            }
+
+                            .slide-text {
+                                @extend %text-main-color;
+                                margin-top: 1rem;
+                            }
                         }
                     }
 
@@ -333,11 +336,11 @@ body {
                             border-radius: 50%;
                             border-color: white;
                             border-width: 1px;
-                            padding: 0.05rem 0.25rem 0.04rem;
-                            scale: 1.25;
+                            padding: 0.05rem 0.45rem 0.04rem;
+                            font-size: 2rem;
                         }
 
-                        #slide-right {
+                        .slide-right {
                             margin-left: 1rem;
                         }
                     }
@@ -352,72 +355,69 @@ body {
             .template-div {
                 @include section-div(80%);
 
-                span {
+                .template-title {
                     @extend %text-center, %text-title;
                     display: block;
                 }
 
-                p {
-                    @extend %text-center;
-                    color: $color-grey-blue;
+                .template-text {
+                    @extend %text-content-center;
                     margin-top: 2rem;
                 }
 
                 .specifying-image {
+                    @include flex(row, space-between);
                     position: relative;
                     margin-top: 3rem;
                     background-image: url('images/Screen\ Mockup.png');
                     background-position: center;
-                    background-size: contain;
+                    background-size: 65%;
                     background-repeat: no-repeat;
                     height: 50vh;
-                    @include flex(row, space-between);
+
+                    .option-title {
+                        font-size: 1rem;
+                        font-weight: 700;
+                        display: block;
+                    }
+
+                    .option-img {
+                        width: 200%;
+                        position: absolute;
+                    }
+
+                    .option-text {
+                        margin-top: 2rem;
+                    }
+
+                    .option-div {
+                        width: 25%;
+                        position: relative;
+                    }
 
                     .layout {
                         margin-top: 2rem;
                         align-self: flex-start;
-                        width: 25%;
-                        position: relative;
 
-                        span {
-                            font-size: 1rem;
+                        .left {
                             text-align: left;
-                            font-weight: 700;
                         }
 
-                        img {
-                            width: 200%;
-                            position: absolute;
+                        .option-img-left {
                             left: 0;
-                        }
-
-                        p {
-                            text-align: left;
-                            margin-top: 2rem;
                         }
                     }
 
                     .customize {
-                        margin-bottom: 4rem;
                         align-self: flex-end;
-                        width: 25%;
-                        position: relative;
+                        margin-bottom: 1.5rem;
 
-                        span {
-                            font-size: 1rem;
+                        .right {
                             text-align: right;
-                            font-weight: 700;
                         }
 
-                        img {
-                            width: 200%;
-                            position: absolute;
+                        .option-img-right {
                             right: 0;
-                        }
-
-                        p {
-                            text-align: right;
-                            margin-top: 2rem;
                         }
                     }
                 }
@@ -433,7 +433,7 @@ body {
                 @include flex(column, center);
                 padding-top: 3rem;
 
-                h2 {
+                .pricing-title {
                     @extend %text-center, %text-title;
                 }
 
@@ -441,7 +441,7 @@ body {
                     @include flex(row, space-around);
                     margin: 4rem 0;
 
-                    div {
+                    .pricing-card {
                         @extend %text-center, %pointer;
                         width: 240px;
                         height: 250px;
@@ -449,14 +449,14 @@ body {
                         transition: 0.5s;
 
 
-                        h4 {
+                        .pricing-card-title {
                             margin-top: 1.5rem;
                             margin-bottom: 1rem;
                             font-weight: 500;
                         }
 
-                        span {
-                            color: $color-grey-blue;
+                        .price-text {
+                            @extend %text-main-color;
 
                             .dollar {
                                 font-size: 1rem;
@@ -471,11 +471,11 @@ body {
                             }
                         }
 
-                        ul {
+                        .card-list {
                             margin-top: 1.5rem;
                             list-style-type: none;
 
-                            li {
+                            .card-item {
                                 color: $color-grey-blue;
                                 font-size: 0.9rem;
 
@@ -496,7 +496,7 @@ body {
                     }
                 }
 
-                p {
+                .pricing-text {
                     @extend %text-center;
                     width: 70%;
                     color: $color-grey-blue;
@@ -508,12 +508,12 @@ body {
                     @include active-button(white, $color-light-blue, 3rem, 3rem, $color-light-blue, 0.5rem 3rem);
                     margin-top: 2rem;
                     text-decoration: none;
-                }
 
-                .invite-btn:hover,
-                .invite-btn:active {
-                    background-color: $color-medium-blue;
-                    border-color: $color-medium-blue;
+                    &:hover,
+                    &:active {
+                        background-color: $color-medium-blue;
+                        border-color: $color-medium-blue;
+                    }
                 }
             }
         }
@@ -529,29 +529,29 @@ body {
             align-items: center;
             color: $color-grey-blue;
 
-            ul {
+            .footer-list {
                 @include flex(row, space-between);
                 list-style-type: none;
                 padding-top: 2.5rem;
                 font-size: 0.85rem;
 
 
-                div {
+                .links-div {
                     @include flex(row, space-around);
                     width: 35%;
                 }
 
-                li {
+                .footer-item {
                     display: block;
 
-                    a:active,
-                    a {
-                        color: $color-grey-blue;
+                    .footer-link:active,
+                    .footer-link {
+                        @extend %text-main-color;
                         text-decoration: none;
-                    }
 
-                    a:hover {
-                        color: $color-light-blue;
+                        &:hover{
+                            color: $color-light-blue;
+                        }
                     }
                 }
             }
@@ -560,10 +560,10 @@ body {
 }
 
 @media (max-width: 1024px) {
-    body main .drag-drop .separator .scroller div {
+    body main .drag-drop .separator .scroller .slide-bar {
         line-height: 1.1;
 
-        span {
+        .slide-title {
             font-size: 2rem;
         }
     }
@@ -573,10 +573,9 @@ body {
     body {
         line-height: 1.1;
 
-
         header {
 
-            nav ul .nav-div .login-btn {
+            .nav-list .nav-list .nav-div .login-btn {
                 padding: 0.5rem 1rem;
                 align-self: center;
             }
@@ -592,8 +591,6 @@ body {
             }
         }
 
-
-
         main {
             .example {
                 margin-top: 10rem;
@@ -602,27 +599,27 @@ body {
                 .text-content {
                     width: 40%;
 
-                    span {
+                    .example-title {
                         font-size: 2rem;
                     }
 
-                    p {
+                    .example-text {
                         font-size: 0.9rem;
                         margin: 1rem 0;
                     }
 
-                    ul li {
+                    .example-list .list-item {
                         font-size: 0.8rem;
                         margin: 0;
 
-                        span {
+                        .fa-circle-check {
                             font-size: 0.8rem;
                         }
                     }
                 }
 
                 .img-left img {
-                    width: 420px;
+                    width: 405px;
                     height: 300px;
                     margin-top: 3rem;
                 }
@@ -631,26 +628,24 @@ body {
             .drag-drop .separator {
                 width: 95%;
 
-                div {
-                    margin-top: 4rem;
 
-                    img {
-                        width: 450px;
-                        height: 280px;
-                    }
+                .dashboard-div .dashboard-img {
+                    width: 400px;
+                    height: 260px;
                 }
+
 
                 .scroller {
                     margin-right: 0rem;
                     margin-left: 0rem;
 
-                    div {
-                        span {
+                    .slide-bar {
+                        .slide-title {
                             font-size: 1.5rem;
                             line-height: 1.2;
                         }
 
-                        p {
+                        .slide-text {
                             font-size: 0.8rem;
                         }
                     }
@@ -662,55 +657,51 @@ body {
             }
 
             .template .template-div {
-                span {
+                .template-title {
                     font-size: 2rem;
                 }
 
-                p {
+                .template-text {
                     font-size: 0.8rem;
                 }
 
                 .specifying-image {
                     background-size: 60%;
 
-                    .customize {
-                        img {
-                            width: 180%;
-                        }
+                    .option-text {
+                        margin-top: 1.5rem;
+                    }
 
-                        p {
-                            margin-top: 1.5rem;
+                    .customize {
+                        .option-img-left {
+                            width: 180%;
                         }
                     }
 
                     .layout {
                         width: 20%;
 
-                        img {
+                        .option-img-right {
                             width: 250%;
-                        }
-
-                        p {
-                            margin-top: 1.5rem;
                         }
                     }
                 }
             }
 
             .pricing .pricing-main {
-                h2 {
+                .pricing-title {
                     font-size: 2rem;
                 }
 
-                .pricing-div div {
+                .pricing-div .pricing-card {
                     width: 175px;
 
-                    ul li {
+                    .card-list .card-item {
                         font-size: 0.7rem;
                     }
                 }
 
-                p {
+                .pricing-text {
                     font-size: 0.8rem;
                 }
 
@@ -726,11 +717,13 @@ body {
     body {
 
         header {
-            nav {
-                ul {
+            .nav-bar {
+                .nav-list {
                     .logo {
-                        padding: 1rem 0;
-                        scale: 0.8;
+                        align-self: center;
+                        width: 80%;
+                        height: 80%;
+                        margin-left: 2rem;
                     }
 
                     .div-collapse {
@@ -741,37 +734,39 @@ body {
                             display: flex;
                             align-items: center;
 
-                            span {
+                            .fa-solid {
                                 font-size: 2rem;
                                 width: 2rem;
                             }
                         }
 
-                        #nav-div {
-                            display: none;
-                        }
 
                         .nav-div {
                             @include flex(column, center);
+                            text-align: center;
                             width: 100px;
                             position: absolute;
                             right: 3.25rem;
                             background-color: $color-dark-blue;
                             border: 1px solid $color-light-blue;
-                            padding: 0.5rem;
+                            padding: 1rem;
                             margin-top: 3rem;
 
+
                             .nav-link {
-                                padding: 0;
-                                padding-top: 0.5rem;
                                 text-align: center;
                             }
 
                             .login-btn {
                                 margin: 0;
                                 text-align: center;
-                                padding: 0.5rem;
+                                padding: 0.25rem 0.85rem;
                             }
+                        }
+
+
+                        .nav-div {
+                            display: none;
                         }
                     }
                 }
@@ -780,7 +775,7 @@ body {
             .header-div {
                 margin-top: 2rem;
 
-                h1 {
+                .header-title {
                     font-size: 1.5rem;
                 }
 
@@ -792,7 +787,7 @@ body {
             div img {
                 width: 75%;
                 height: 50%;
-                top: 350px;
+                top: 375px;
             }
         }
 
@@ -804,12 +799,12 @@ body {
                 .card {
                     margin-bottom: 3rem;
 
-                    a {
-                        padding: 0.5rem 1rem
+                    .icon-btn {
+                        padding: 1rem 1.5rem;
                     }
 
-                    p {
-                        padding: 1rem 0;
+                    .icon-text {
+                        padding: 1rem 0 2rem;
                     }
                 }
             }
@@ -823,7 +818,7 @@ body {
                     text-align: center;
                     width: 90%;
 
-                    ul {
+                    .example-list {
                         margin: 0 auto;
                         width: 80%;
                     }
@@ -844,26 +839,33 @@ body {
                 .separator {
                     flex-direction: column;
                     align-items: center;
+                    height: 90vh;
 
-                    div {
-                        margin-top: 5rem;
+                    .dashboard-div {
+                        margin-top: 0;
 
-                        img {
+                        .dashboard-img {
                             width: 370px;
                             height: 220px;
                         }
                     }
 
+
                     .scroller {
                         margin-top: 0;
                         width: 80%;
 
-                        div {
+                        .slide-bar {
                             margin-top: 0;
 
                             .slide-div {
                                 text-align: center;
                                 height: 5rem;
+                                margin-top: 0;
+
+                                .slide-title {
+                                    font-size: 1.5rem;
+                                }
                             }
                         }
 
@@ -877,13 +879,12 @@ body {
 
 
                             .slide-btn {
-                                scale: 1;
                                 font-size: 2rem;
                                 padding: 0.35rem 0.95rem;
 
                             }
 
-                            #slide-right {
+                            .slide-right {
                                 margin-left: 0;
                             }
                         }
@@ -897,7 +898,7 @@ body {
                 .template-div {
                     width: 100%;
 
-                    p {
+                    .template-text {
                         line-height: 1.2rem;
                         width: 80%;
                         margin: 1rem auto 0;
@@ -909,19 +910,20 @@ body {
                         margin-top: 2rem;
                         flex-direction: column;
                         justify-content: space-between;
+                        font-size: 0.8rem;
+
+                        .option-text{
+                            margin: 0;
+                        }
 
                         .layout {
                             margin-top: 0;
                             margin-left: 1rem;
                             width: 40%;
 
-                            img {
+                            .option-img-left {
                                 width: 150%;
                                 bottom: -1rem;
-                            }
-
-                            p {
-                                margin: 0;
                             }
                         }
 
@@ -930,20 +932,15 @@ body {
                             margin-top: 1rem;
                             margin-left: 1rem;
 
-                            span {
-                                text-align: left;
-                            }
-
-                            p {
-                                text-align: left;
-                                margin: 0;
-                            }
-
-                            img {
+                            .option-img-right {
                                 transform: rotate(180deg);
                                 bottom: 6.75rem;
                                 right: unset;
                                 width: 240%;
+                            }
+
+                            .right{
+                                text-align: left;
                             }
                         }
                     }
@@ -959,30 +956,32 @@ body {
                         flex-direction: column;
                         align-items: center;
 
-                        div {
+                        .pricing-card {
                             width: 250px;
                             margin-bottom: 2rem;
 
-                            h4 {
+                            .pricing-card-title {
                                 font-size: 1.1rem;
                             }
 
-                            span .dollar {
-                                font-size: 1.5rem;
+                            .price-text{
+                                .dollar {
+                                    font-size: 1.5rem;
+                                }
+    
+                                .price {
+                                    font-size: 2.6rem;
+                                }
                             }
 
-                            span .price {
-                                font-size: 2.6rem;
-                            }
-
-                            ul li {
+                            .card-list .card-item {
                                 font-size: 0.85rem;
                             }
 
                         }
                     }
 
-                    p {
+                    .pricing-text {
                         width: auto;
                         font-size: 1rem;
                     }
@@ -991,49 +990,84 @@ body {
         }
 
         footer .footer-div {
-            
 
-            ul{
+
+            .footer-list {
                 align-items: center;
                 padding-top: 0;
                 height: 15vh;
 
-                li {
+                .footer-item {
                     font-size: 0.7rem;
                     width: 30%;
                 }
 
-                div{
+                .links-div {
                     width: 40%;
                     flex-wrap: wrap;
 
-                    li{
+                    .footer-link {
                         width: 30%;
                         height: 1.5rem;
                     }
                 }
-            } 
+            }
         }
     }
 }
 
 @media (max-width: 375px) {
-    body main{
-        .example .img-left img{
-            width: 365px;
-            height: 280px;
+    body {
+        header .nav-bar .nav-list .div-collapse .nav-div {
+            right: 2.5rem;
         }
 
-        .template .template-div .specifying-image{
-            margin-top: 4rem;
-
-            .layout{
-                top: -2rem;
+        main {
+            .example .img-left img {
+                width: 355px;
+                height: 280px;
             }
 
-            .customize{
-                top: -2rem;
+            .template .template-div .specifying-image {
+                margin-top: 4rem;
+
+                .layout {
+                    top: -2rem;
+                }
+
+                .customize {
+                    top: -2rem;
+                }
             }
         }
-    } 
+    }
+}
+
+@media (max-width: 320px) {
+    body {
+        header {
+            div img {
+                height: 45%;
+            }
+
+            .nav-bar .nav-list .div-collapse .nav-div {
+                right: 1.5rem;
+            }
+        }
+
+        main {
+            .example .img-left img {
+                width: 305px;
+            }
+
+            .drag-drop .separator .dashboard-div .dashboard-img {
+                width: 280px;
+                height: 210px;
+            }
+
+            .pricing{
+                margin-top: 2rem;
+            }
+        }
+    }
 }
