@@ -1,3 +1,2 @@
-import './../index.html';
+import './../page.html';
 import './styles.scss';
-

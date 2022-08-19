@@ -3,7 +3,7 @@ services:
   server:
     image: httpd:2.4
     volumes:
-      - ./App/assets/dist:/usr/local/apache2/htdocs/
+      - ./App/:/usr/local/apache2/htdocs/
     working_dir: /usr/local/apache2/htdocs/
     ports:
       - 80:80

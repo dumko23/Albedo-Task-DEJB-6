@@ -31,9 +31,9 @@ module.exports = {
       }),
       new HtmlWebpackPlugin({
          title: 'Landing Page',
-         filename: 'index.html',
+         filename: './../../index.html',
          hash: true,
-         template: './App/index.html'
+         template: './App/page.html'
       })
    ],
 
