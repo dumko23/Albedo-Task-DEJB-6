@@ -62,7 +62,7 @@ $color-grey: #dadee7;
 
 %complex-back {
     background-color: $color-dark-blue;
-    background-image: url(images/Grid.png), url(images/Graph.png);
+    background-image: url(images/grid.png), url(images/graph.png);
     background-size: cover, contain;
     background-repeat: no-repeat, no-repeat;
     background-position: top, center;
@@ -369,7 +369,7 @@ body {
                     @include flex(row, space-between);
                     position: relative;
                     margin-top: 3rem;
-                    background-image: url('images/Screen\ Mockup.png');
+                    background-image: url('images/screen-mockup.png');
                     background-position: center;
                     background-size: 65%;
                     background-repeat: no-repeat;
@@ -549,7 +549,7 @@ body {
                         @extend %text-main-color;
                         text-decoration: none;
 
-                        &:hover{
+                        &:hover {
                             color: $color-light-blue;
                         }
                     }
@@ -912,7 +912,7 @@ body {
                         justify-content: space-between;
                         font-size: 0.8rem;
 
-                        .option-text{
+                        .option-text {
                             margin: 0;
                         }
 
@@ -939,7 +939,7 @@ body {
                                 width: 240%;
                             }
 
-                            .right{
+                            .right {
                                 text-align: left;
                             }
                         }
@@ -964,11 +964,11 @@ body {
                                 font-size: 1.1rem;
                             }
 
-                            .price-text{
+                            .price-text {
                                 .dollar {
                                     font-size: 1.5rem;
                                 }
-    
+
                                 .price {
                                     font-size: 2.6rem;
                                 }
@@ -1065,7 +1065,7 @@ body {
                 height: 210px;
             }
 
-            .pricing{
+            .pricing {
                 margin-top: 2rem;
             }
         }
