@@ -475,6 +475,7 @@ body {
                     }
 
                     .option-text {
+                        @extend %text-main-color;
                         margin-top: 2rem;
                     }
 
@@ -819,17 +820,17 @@ body {
 
 @media (max-height: 1000px) and (max-width: 425px) {
     body header {
-        height: 525px;
+        height: 700px;
     }
 
     body header div .page-img {
         width: 300px;
         height: 250px;
-        top: 325px;
+        top: 550px;
     }
 
     body header .header-div {
-        margin-top: 0;
+        margin-top: 10rem;
     }
 
     body main .drag-drop .separator {
@@ -1188,9 +1189,12 @@ body {
 
 @media (max-width: 375px) {
     body {
-        header .nav-bar .nav-list .div-collapse .nav-div {
-            right: 2.5rem;
-        }
+        header
+        {
+            .nav-bar .nav-list .div-collapse .nav-div {
+                right: 2.5rem;
+            }
+        } 
 
         main {
             .example .img-left img {
@@ -1265,8 +1269,9 @@ body {
     body header .modal-layout .modal-window .modal-content .modal-text {
         font-size: 0.9rem;
     }
-
 }
+
+
 
 @keyframes animate-modal {
     from {opacity: 0}
