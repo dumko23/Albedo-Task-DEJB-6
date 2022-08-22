@@ -66,3 +66,22 @@ function toggleMenu(toggle = '') {
         document.getElementById('nav-div').style.display = 'flex';
     }
 }
+
+let btn = document.getElementById('get-started');
+
+let modal = document.getElementById('modal');
+
+let link = document.getElementById('link');
+
+btn.onclick = function () {
+    modal.style.display = "block";
+}
+
+window.onclick = function (event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    } else if (event.target == link) {
+        modal.style.display = "none";
+    }
+}
+
