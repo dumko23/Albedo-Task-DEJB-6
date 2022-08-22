@@ -148,11 +148,12 @@ body {
                 @extend %text-center, %text-title;
                 color: white;
                 margin-bottom: 0.5rem;
+                font-size: 2.5rem;
             }
 
             .header-text {
                 @extend %text-content-center;
-                font-size: 1.5rem;
+                font-size: 1.3rem;
             }
 
             .invite-btn {
@@ -171,11 +172,10 @@ body {
 
             .page-img {
                 position: absolute;
-                width: 400px;
-                height: 300px;
+                scale: 0.55;
                 left: 0;
                 right: 0;
-                top: 365px;
+                top: 180px;
                 margin: auto;
                 box-shadow: 0px 0px 50px 9px rgba(253, 253, 253, 0.1);
             }
@@ -364,8 +364,8 @@ body {
                 img {
                     position: absolute;
                     right: 0;
-                    width: 520px;
-                    height: 350px;
+                    width: 40%;
+                    height: auto;
                 }
             }
         }
@@ -385,8 +385,8 @@ body {
                     margin-top: 5rem;
 
                     .dashboard-img {
-                        width: 500px;
-                        height: 320px;
+                        width: 80%;
+                        height: auto;
                     }
                 }
 
@@ -425,7 +425,7 @@ body {
                             border-radius: 50%;
                             border-color: white;
                             border-width: 1px;
-                            padding: 0.05rem 0.65rem 0.04rem;
+                            padding: 0 1rem;
                             font-size: 2rem;
                         }
 
@@ -723,8 +723,8 @@ body {
                 }
 
                 .img-left img {
-                    width: 405px;
-                    height: 280px;
+                    width: 50%;
+                    height: auto;
                     margin-top: 3rem;
                 }
             }
@@ -734,14 +734,15 @@ body {
 
 
                 .dashboard-div .dashboard-img {
-                    width: 345px;
-                    height: 240px;
+                    width: 90%;
+                    height: auto;
                 }
 
 
                 .scroller {
                     margin-right: 0rem;
                     margin-left: 0rem;
+                    width: 90%;
 
                     .slide-bar {
                         .slide-title {
@@ -755,7 +756,7 @@ body {
                     }
 
                     .div-btn {
-                        bottom: 2rem;
+                        bottom: 0;
                     }
                 }
             }
@@ -815,6 +816,10 @@ body {
                 }
             }
         }
+    }
+
+    body header div .page-img {
+        margin-right: -3.5rem;
     }
 }
 
@@ -967,7 +972,8 @@ body {
                     img {
                         position: inherit;
                         float: right;
-                        height: 255px;
+                        height: auto;
+                        width: 70%;
                     }
                 }
             }
@@ -984,8 +990,8 @@ body {
                         margin-top: 0;
 
                         .dashboard-img {
-                            width: 370px;
-                            height: 220px;
+                            width: 100%;
+                            height: auto;
                         }
                     }
 
@@ -1019,7 +1025,7 @@ body {
 
                             .slide-btn {
                                 font-size: 2rem;
-                                padding: 0.35rem 0.95rem;
+                                padding: 0 1rem;
 
                             }
 
@@ -1061,7 +1067,7 @@ body {
 
                             .option-img-left {
                                 width: 150%;
-                                bottom: -2rem;
+                                bottom: -1rem;
                             }
                         }
 
@@ -1158,9 +1164,10 @@ body {
     }
 
     body header div .page-img {
-        width: 300px;
-        height: 200px;
-        top: 530px;
+        width: 100%;
+        height: auto;
+        top: 460px;
+        margin-left: 0rem;
     }
 
     body main .template .template-div .specifying-image .layout {
@@ -1183,17 +1190,16 @@ body {
 
 @media (max-width: 375px) {
     body {
-        header
-        {
+        header {
             .nav-bar .nav-list .div-collapse .nav-div {
                 right: 2.5rem;
             }
-        } 
+        }
 
         main {
             .example .img-left img {
-                width: 355px;
-                height: 240px;
+                width: 80%;
+                height: auto;
             }
 
             .template .template-div .specifying-image {
@@ -1204,19 +1210,26 @@ body {
                 }
 
                 .customize {
-                    top: -1rem;
+                    top: 0;
                 }
             }
         }
     }
+
+    body header div .page-img {
+        top: 520px;
+        margin-left: 0rem;
+    }
+
 }
 
 @media (max-width: 320px) {
     body {
         header {
             div .page-img {
-                height: 170px;
-                width: 240px;
+                height: 75%;
+                width: auto;
+                margin-left: -2rem;
             }
 
             .nav-bar .nav-list .div-collapse .nav-div {
@@ -1226,14 +1239,9 @@ body {
 
         main {
             .example .img-left img {
-                width: 305px;
-                height: 220px;
+                width: 90%;
+                height: auto;
                 top: 380px;
-            }
-
-            .drag-drop .separator .dashboard-div .dashboard-img {
-                width: 280px;
-                height: 210px;
             }
 
             .pricing {
@@ -1247,7 +1255,7 @@ body {
     }
 
     body main .template .template-div .specifying-image .customize {
-        top: -2rem;
+        top: -1.5rem;
     }
 
     body header .modal-layout .modal-window {
@@ -1268,6 +1276,11 @@ body {
 
 
 @keyframes animate-modal {
-    from {opacity: 0}
-    to {opacity: 1}
-  }
+    from {
+        opacity: 0
+    }
+
+    to {
+        opacity: 1
+    }
+}
