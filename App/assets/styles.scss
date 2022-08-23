@@ -89,23 +89,25 @@ body {
 
     header {
         @extend %complex-back;
-        height: 600px;
+        height: 1100px;
 
         .nav-bar {
-            @include section-div(90%);
+            @include section-div(1688px);
+            padding-top: 67px;
 
             .nav-list {
                 @include list-flex-nomarks(row, space-between);
                 color: white;
                 align-items: center;
-                padding: 2rem 0;
+                height: 65px;
+
 
                 .logo {
                     @extend %pointer;
                 }
 
                 .div-collapse {
-                    width: 50%;
+                    width: 694px;
 
                     .menu {
                         display: none;
@@ -119,6 +121,7 @@ body {
                             @extend %pointer;
                             color: white;
                             text-decoration: none;
+                            font-size: 25px;
 
                             &:hover {
                                 color: $color-light-blue;
@@ -130,6 +133,7 @@ body {
                             @include active-button($color-light-blue, $color-dark-blue, 3rem, 3rem, $color-medium-blue, 1rem 2rem);
                             margin: auto 0;
                             color: $color-light-blue;
+                            font-size: 25px;
                         }
 
                         .login-btn:hover {
@@ -141,25 +145,27 @@ body {
         }
 
         .header-div {
-            @include section-div(90%);
+            @include section-div(864px);
             @include flex(column, center);
+            margin-top: 146px;
 
             .header-title {
                 @extend %text-center, %text-title;
                 color: white;
                 margin-bottom: 0.5rem;
-                font-size: 2.5rem;
+                font-size: 59px;
             }
 
             .header-text {
                 @extend %text-content-center;
-                font-size: 1.3rem;
+                font-size: 34px;
             }
 
             .invite-btn {
                 @extend %div-center, %text-center;
-                @include active-button(white, $color-light-blue, 3rem, 3rem, $color-medium-blue, 0.5rem 3rem);
+                @include active-button(white, $color-light-blue, 3rem, 3rem, $color-medium-blue, 0.7rem 3rem);
                 margin-top: 2rem;
+                font-size: 25px;
 
                 &:hover,
                 &:active {
@@ -171,12 +177,8 @@ body {
         div {
 
             .page-img {
-                position: absolute;
-                scale: 0.55;
-                left: 0;
-                right: 0;
-                top: 180px;
-                margin: auto;
+                display: block;
+                margin: 88px auto 0;
                 box-shadow: 0px 0px 50px 9px rgba(253, 253, 253, 0.1);
             }
         }
@@ -273,13 +275,13 @@ body {
 
         .icons {
             @include flex(row, space-evenly);
-            @include section-div(85%);
-            margin-top: 5rem;
+            @include section-div(1347px);
+            margin-top: 257px;
             padding-top: 5rem;
 
             .card {
                 @extend %text-center;
-                width: 260px;
+                width: 360px;
 
                 div {
                     @extend %div-center;
@@ -296,13 +298,14 @@ body {
                 .icon-title {
                     @extend %text-center;
                     padding-bottom: 0.25rem;
-                    font-size: 1.2rem;
+                    font-size: 24px;
                     font-weight: 700;
                 }
 
                 .icon-text {
                     @extend %text-content-center;
                     padding: 1rem 0 4rem 0;
+                    font-size: 18;
                 }
 
                 .icon-btn:active,
@@ -311,6 +314,7 @@ body {
                     @include active-button(black, white, 1.5rem, 1rem, $color-grey, 1rem 2rem);
                     color: black;
                     font-weight: 600;
+                    font-size: 14px;
 
                     &:hover {
                         background-color: $color-grey;
@@ -322,23 +326,26 @@ body {
         .example {
             @include flex(row, space-between);
             @include section-div(100%);
-            margin-top: 8rem;
-            margin-bottom: 4rem;
+            margin-top: 167px;
+            height: 935px;
 
             .text-content {
                 text-align: start;
-                width: 50%;
+                width: 651px;
                 margin-right: 2rem;
-                margin-left: 6rem;
+                margin-left: 282px;
+                margin-top: 80px;
 
 
                 .example-title {
                     @extend %text-title;
+                    font-size: 46px;
                 }
 
                 .example-text {
                     @extend %text-main-color;
-                    margin: 1.5rem 0;
+                    margin: 2rem 0;
+                    width: 577px;
                 }
 
                 .example-list {
@@ -346,12 +353,12 @@ body {
 
                     .list-item {
                         color: $color-light-blue;
-                        font-size: 1rem;
-                        line-height: 1rem;
-                        margin: 0.5rem 0;
+                        font-size: 18px;
+                        line-height: 22px;
+                        margin: 2rem 0;
 
                         .fa-circle-check {
-                            font-size: 1rem;
+                            font-size: 22px;
                             margin-right: 1rem;
                         }
                     }
@@ -359,12 +366,10 @@ body {
             }
 
             .img-left {
-                width: 50%;
+
 
                 img {
-                    position: absolute;
-                    right: 0;
-                    width: 40%;
+                    width: 1047px;
                     height: auto;
                 }
             }
@@ -373,7 +378,7 @@ body {
         .drag-drop {
             @extend %complex-back;
             @include flex(row, none);
-            margin-top: 2rem;
+            height: 758px;
 
             .separator {
                 @include section-div(90%);
@@ -382,24 +387,25 @@ body {
                 margin: 3rem auto;
 
                 .dashboard-div {
-                    margin-top: 5rem;
+                    margin-top: 148px;
 
                     .dashboard-img {
-                        width: 80%;
+                        width: 833px;
                         height: auto;
                     }
                 }
 
                 .scroller {
-                    margin-right: 3rem;
+                    @include flex(column, space-between);
+                    margin-right: 339px;
                     margin-left: 3rem;
-                    position: relative;
                     width: 500px;
+                    margin-bottom: 99px;
 
                     .slide-bar {
 
                         .slide-div {
-                            margin-top: 2rem;
+                            margin-top: 229px;
 
                             .slide-title {
                                 @extend %text-title;
@@ -414,9 +420,6 @@ body {
                     }
 
                     .div-btn {
-                        position: absolute;
-                        margin-top: 0;
-                        bottom: 0;
 
                         .slide-btn {
                             @extend %pointer;
@@ -438,7 +441,7 @@ body {
         }
 
         .template {
-            margin-top: 5rem;
+            height: 1135px;
 
             .template-div {
                 @include section-div(80%);
@@ -446,25 +449,31 @@ body {
                 .template-title {
                     @extend %text-center, %text-title;
                     display: block;
+                    padding-top: 104px;
                 }
 
                 .template-text {
                     @extend %text-content-center;
+                    display: block;
                     margin-top: 2rem;
+                    width: 988px;
+                    margin-left: auto;
+                    margin-right: auto;
                 }
 
                 .specifying-image {
                     @include flex(row, space-between);
                     position: relative;
-                    margin-top: 3rem;
+                    margin-top: 86px;
                     background-image: url('images/screen-mockup.png');
                     background-position: center;
                     background-size: 65%;
                     background-repeat: no-repeat;
-                    height: 400px;
+                    height: 681px;
+                    width: 1488px;
 
                     .option-title {
-                        font-size: 1rem;
+                        font-size: 1.5rem;
                         font-weight: 700;
                         display: block;
                     }
@@ -485,7 +494,7 @@ body {
                     }
 
                     .layout {
-                        margin-top: 2rem;
+                        margin-top: 8rem;
                         align-self: flex-start;
 
                         .left {
@@ -499,7 +508,7 @@ body {
 
                     .customize {
                         align-self: flex-end;
-                        margin-bottom: 3.5rem;
+                        margin-bottom: 13.5rem;
 
                         .right {
                             text-align: right;
@@ -518,8 +527,8 @@ body {
 
             .pricing-main {
                 @include section-div(80%);
-                @include flex(column, center);
-                padding-top: 3rem;
+                @include flex(column, space-evenly);
+                height: 1046px;
 
                 .pricing-title {
                     @extend %text-center, %text-title;
@@ -527,12 +536,12 @@ body {
 
                 .pricing-div {
                     @include flex(row, space-around);
-                    margin: 4rem 0;
+                    // margin: 4rem 0;
 
                     .pricing-card {
                         @extend %text-center, %pointer;
-                        width: 240px;
-                        height: 250px;
+                        width: 361px;
+                        height: 423px;
                         box-shadow: 0px 0px 50px 9px rgba(76, 75, 121, 0.15);
                         transition: 0.5s;
 
@@ -541,19 +550,20 @@ body {
                             margin-top: 1.5rem;
                             margin-bottom: 1rem;
                             font-weight: 500;
+                            font-size: 1.5rem;
                         }
 
                         .price-text {
                             @extend %text-main-color;
 
                             .dollar {
-                                font-size: 1rem;
+                                font-size: 3rem;
                                 font-weight: 500;
                                 color: black;
                             }
 
                             .price {
-                                font-size: 2rem;
+                                font-size: 4rem;
                                 font-weight: 600;
                                 color: black;
                             }
@@ -565,7 +575,8 @@ body {
 
                             .card-item {
                                 color: $color-grey-blue;
-                                font-size: 0.9rem;
+                                font-size: 1.2rem;
+                                margin-bottom: 1rem;
 
                                 .fa-circle-check {
                                     color: $color-light-blue;
@@ -589,6 +600,7 @@ body {
                     width: 70%;
                     color: $color-grey-blue;
                     align-self: center;
+                    font-size: 1.2rem;
                 }
 
                 .invite-btn {
@@ -626,7 +638,7 @@ body {
 
                 .links-div {
                     @include flex(row, space-around);
-                    width: 35%;
+                    width: 30%;
                 }
 
                 .footer-item {
@@ -646,6 +658,64 @@ body {
         }
     }
 }
+
+
+@media (max-width: 1440px) {
+
+    body header .nav-bar {
+        width: 1188px;
+    }
+
+    body main .icons {
+        width: 1147px;
+    }
+
+    body main .example .text-content {
+        text-align: start;
+        width: 451px;
+        margin-left: 102px;
+        margin-top: 40px;
+    }
+
+    body main .example .img-left img {
+        width: 800px;
+        height: auto;
+    }
+
+    body main .example .text-content .example-text {
+        margin: 2rem 0;
+        width: 451px;
+    }
+
+    body main .example {
+        height: 728px;
+    }
+
+    body main .drag-drop .separator .dashboard-div .dashboard-img {
+        width: 680px;
+    }
+
+    body main .drag-drop .separator .scroller {
+        margin-right: 154px;
+        margin-bottom: 0;
+    }
+
+    body main .template .template-div .specifying-image {
+        width: 1088px;
+    }
+
+    body main .template .template-div .specifying-image .layout {
+        margin-top: 10rem;
+    }
+
+    body main .pricing .pricing-main .pricing-div .pricing-card {
+        width: 321px;
+        height: 403px;
+    }
+}
+
+
+
 
 @media (max-width: 1024px) {
     body main .drag-drop .separator .scroller .slide-bar {
@@ -670,6 +740,76 @@ body {
     body main .template .template-div .specifying-image .layout {
         margin-top: 4rem;
     }
+
+    body main .example .text-content {
+        width: 320px;
+
+        .example-text {
+            margin: 2rem 0;
+            width: 320px;
+        }
+    }
+
+    body main .example .img-left img {
+        width: 600px;
+    }
+
+    body main .example .img-left img {
+        margin-top: 180px;
+    }
+
+    body header .nav-bar {
+        width: 908px;
+
+        .nav-list .div-collapse {
+            width: 494px;
+        }
+    }
+
+    body main .icons {
+        width: 1024px;
+
+        .card {
+            width: 280px;
+        }
+    }
+
+    body main .drag-drop .separator .dashboard-div .dashboard-img {
+        width: 540px;
+    }
+
+    body main .drag-drop .separator .scroller {
+        margin-right: 54px;
+
+        .slide-bar .slide-div {
+            margin-top: 129px;
+        }
+    }
+
+    body main .template .template-div .specifying-image {
+        width: 860px;
+    }
+
+    body main .template .template-div .template-text {
+        width: 788px;
+    }
+
+    body main .template .template-div .specifying-image .layout {
+        margin-top: 10rem;
+    }
+
+    body main .pricing .pricing-main .pricing-div .pricing-card {
+        width: 251px;
+        height: 383px;
+
+        .card-list .card-item {
+            color: #8492af;
+            font-size: 1.0rem;
+        }
+    }
+
+
+
 }
 
 @media (max-width: 768px) {
@@ -818,15 +958,357 @@ body {
         }
     }
 
-    body header div .page-img {
-        margin-right: -3.5rem;
+    body header .nav-bar {
+        width: 688px;
     }
+
+    body header .header-div {
+        width: 600px;
+    }
+
+    body header div .page-img {
+        margin-right: 0;
+        width: 600px;
+        margin: 160px auto 0
+    }
+
+    body main .icons {
+        flex-direction: column;
+        width: 708px;
+
+        .card {
+            width: 500px;
+            margin: 0 auto;
+
+            div .icon-img {
+                width: 120px;
+                height: 116px;
+            }
+
+            .icon-title {
+                padding-bottom: 0.25rem;
+                font-size: 34px;
+            }
+        }
+    }
+
+    body header .header-div .header-title {
+        font-size: 3rem;
+    }
+
+    body header .nav-bar .nav-list .div-collapse .nav-div .nav-link,
+    body header .nav-bar .nav-list .div-collapse .nav-div .nav-link:active:hover {
+        font-size: 25px;
+    }
+
+    body header .nav-bar .nav-list .div-collapse .nav-div .login-btn,
+    body header .nav-bar .nav-list .div-collapse .nav-div .login-btn:active {
+        font-size: 24px;
+    }
+
+    body header .nav-bar .nav-list .logo {
+        width: 180px;
+    }
+
+    body header .header-div .invite-btn {
+        font-size: 26px;
+    }
+
+    body main .icons .card .icon-text {
+        font-size: 24px;
+    }
+
+    body main .icons .card .icon-btn:active,
+    body main .icons .card .icon-btn {
+        font-size: 28px;
+    }
+
+    body header .nav-bar .nav-list {
+
+        .div-collapse {
+            @include flex(none, center);
+            align-self: center;
+            width: 200px;
+
+            .menu {
+                display: flex;
+                align-items: center;
+
+                .fa-solid {
+                    font-size: 2rem;
+                    width: 2rem;
+                }
+            }
+
+            .nav-div {
+                @include flex(column, center);
+                text-align: center;
+                width: auto;
+                position: absolute;
+                background-color: $color-dark-blue;
+                border: 1px solid $color-light-blue;
+                padding: 2rem;
+                margin-top: 3rem;
+
+                li {
+                    margin-bottom: 1rem;
+                }
+
+                .nav-link {
+                    text-align: center;
+                    margin-bottom: 1rem;
+                }
+
+                .login-btn {
+                    margin: 0;
+                    text-align: center;
+                    padding: 0.45rem 0.85rem;
+                }
+            }
+
+            .nav-div {
+                display: none;
+            }
+        }
+    }
+
+    body main .example {
+        flex-direction: column;
+        margin-top: 2rem;
+        height: 1000px;
+
+        .text-content {
+            margin-left: 3rem;
+            width: 700px;
+            text-align: center;
+
+            .example-title {
+                display: block;
+                margin: 0 auto;
+                font-size: 3rem;
+            }
+
+            .example-text {
+                width: 700px;
+                font-size: 1.5rem;
+            }
+
+            .example-list .list-item {
+                font-size: 1.5rem;
+            }
+        }
+
+        .img-left {
+            align-self: end;
+
+            img {
+                width: 100%;
+            }
+        }
+    }
+
+    body main .drag-drop {
+        height: 1000px;
+
+        .separator {
+            flex-direction: column;
+
+            .dashboard-div {
+                margin-top: 0;
+
+                .dashboard-img {
+                    width: 100%;
+                }
+            }
+
+            .scroller {
+                width: 100%;
+                height: 300px;
+
+                .slide-bar .slide-div {
+                    margin-top: 0;
+                    text-align: center;
+
+                    .slide-title {
+                        font-size: 3rem;
+                    }
+
+                    .slide-text {
+                        font-size: 1.5rem;
+                    }
+                }
+
+                .div-btn {
+                    margin: 0 auto;
+                }
+            }
+        }
+    }
+
+    body main .template .template-div {
+        width: 100%;
+
+        .template-text {
+            width: 586px;
+            font-size: 1.5rem;
+        }
+
+        .template-title {
+            font-size: 3rem;
+        }
+
+        .specifying-image {
+            width: 100%;
+            flex-direction: column;
+            background-position: right;
+            background-size: 75%;
+
+            .option-text {
+                margin: 0;
+            }
+
+            .layout {
+                margin-top: 8rem;
+                margin-left: 3rem;
+                width: 35%;
+                font-size: 1.4rem;
+
+                .option-img-left {
+                    width: 150%;
+                    bottom: -1rem;
+                }
+            }
+
+            .customize {
+                align-self: flex-start;
+                margin-top: 7rem;
+                margin-left: 3rem;
+                font-size: 1.4rem;
+
+                .option-img-right {
+                    transform: rotate(180deg);
+                    bottom: 9.75rem;
+                    right: unset;
+                    width: 210%;
+                }
+
+                .option-text {
+                    width: 300px;
+                }
+
+                .right {
+                    text-align: left;
+                }
+            }
+        }
+    }
+
+    body main .pricing {
+        height: 2000px;
+        padding-top: 8rem;
+
+        .pricing-main {
+            height: auto;
+
+            .pricing-title {
+                font-size: 3rem;
+
+            }
+
+            .pricing-div {
+                flex-direction: column;
+                justify-content: center;
+
+                .pricing-card {
+                    width: 500px;
+                    margin: 2rem auto;
+                    height: 450px;
+
+                    .pricing-card-title {
+                        font-size: 2rem;
+                    }
+
+                    .price-text {
+                        font-size: 2rem;
+
+                        .dollar {
+                            font-size: 3rem;
+                        }
+
+                        .price {
+                            font-size: 4rem;
+                        }
+                    }
+
+                    .card-list .card-item {
+                        font-size: 1.5rem;
+                    }
+                }
+            }
+
+            .pricing-text {
+                margin-top: 2rem;
+                font-size: 1.5rem;
+            }
+
+            .invite-btn {
+                font-size: 1.5rem;
+            }
+        }
+    }
+
+    body footer {
+        height: 160px;
+
+        .footer-div .footer-list {
+
+            font-size: 1.5rem;
+
+
+            .credentials {
+                width: 50%;
+            }
+
+            .links-div {
+                flex-wrap: wrap;
+                width: 35%;
+
+                .footer-link {
+                    padding: 0.5rem 0;
+                    width: 100%;
+                }
+            }
+        }
+    }
+
+    body header .modal-layout .modal-window .modal-content {
+
+        .modal-title {
+            font-size: 2rem;
+        }
+
+        .modal-text {
+            font-size: 1.2rem;
+        }
+
+        div .modal-link {
+            font-size: 1.5rem;
+        }
+    }
+
+
 }
 
 @media (max-height: 1000px) and (max-width: 425px) {
     body header {
         height: 700px;
     }
+
+
+    body header .nav-bar {
+        width: 400px;
+    }
+
 
     body header div .page-img {
         width: 300px;
@@ -836,6 +1318,7 @@ body {
 
     body header .header-div {
         margin-top: 10rem;
+        width: 400px;
     }
 
     body main .drag-drop .separator {
@@ -854,6 +1337,64 @@ body {
 
     body main .template .template-div .specifying-image {
         justify-content: space-evenly;
+    }
+
+    body header .header-div {
+        width: 100%
+    }
+
+    body header div .page-img {
+        width: 90%;
+
+    }
+
+    body header div .page-img {
+        width: 90%;
+        margin: 0 auto;
+    }
+
+    body footer {
+        height: 200px;
+        align-items: center;
+        padding-top: 0;
+
+        .footer-div .footer-list {
+
+            font-size: 1.5rem;
+
+
+            .credentials {
+                width: 40%;
+            }
+
+            .links-div {
+                flex-wrap: wrap;
+                width: 55%;
+
+                .footer-link {
+                    padding: 0.5rem 0;
+                    width: 100%;
+                }
+            }
+        }
+    }
+
+    body footer .footer-div .footer-list .contact {
+        width: 190px;
+        text-align: center;
+
+        a {
+            align-self: center;
+        }
+    }
+
+    body header .modal-layout .modal-window {
+        height: 480px;
+
+        .modal-content {
+            width: 340px;
+            height: 280px;
+        }
     }
 }
 
@@ -888,7 +1429,6 @@ body {
                             @include flex(column, center);
                             text-align: center;
                             width: 100px;
-                            position: absolute;
                             right: 3.25rem;
                             background-color: $color-dark-blue;
                             border: 1px solid $color-light-blue;
@@ -1043,7 +1583,7 @@ body {
                     width: 100%;
 
                     .template-text {
-                        line-height: 1.2rem;
+                        line-height: 1.5rem;
                         width: 80%;
                         margin: 1rem auto 0;
                     }
@@ -1105,25 +1645,25 @@ body {
                         align-items: center;
 
                         .pricing-card {
-                            width: 250px;
+                            width: 350px;
                             margin-bottom: 2rem;
 
                             .pricing-card-title {
-                                font-size: 1.1rem;
+                                font-size: 2rem;
                             }
 
                             .price-text {
                                 .dollar {
-                                    font-size: 1.5rem;
+                                    font-size: 3rem;
                                 }
 
                                 .price {
-                                    font-size: 2.6rem;
+                                    font-size: 4rem;
                                 }
                             }
 
                             .card-list .card-item {
-                                font-size: 0.85rem;
+                                font-size: 1.3rem;
                             }
 
                         }
@@ -1137,26 +1677,36 @@ body {
             }
         }
 
-        footer .footer-div {
+        body footer {
+            height: 200px;
+            align-items: center;
+            padding-top: 0;
+
+            .footer-div .footer-list {
+
+                font-size: 1.5rem;
 
 
-            .footer-list {
-                align-items: center;
-                padding-top: 0;
-                height: 100px;
-
-                .footer-item {
-                    font-size: 0.7rem;
-                    width: 30%;
+                .credentials {
+                    width: 40%;
                 }
 
                 .links-div {
-                    width: 40%;
                     flex-wrap: wrap;
+                    width: 35%;
 
                     .footer-link {
-                        width: 30%;
-                        height: 1.5rem;
+                        padding: 0.5rem 0;
+                        width: 100%;
+                    }
+
+                    .contact {
+                        width: 100px;
+                        text-align: center;
+
+                        a {
+                            align-self: center;
+                        }
                     }
                 }
             }
@@ -1186,11 +1736,86 @@ body {
     body header .modal-layout .modal-window .modal-content {
         height: 185px;
     }
+
+    body main .icons {
+        width: 350px;
+
+        .card {
+            width: 350px;
+        }
+
+    }
+
+    body main .example .text-content .example-text {
+        width: 325px;
+    }
+
+    body header .nav-bar {
+        width: 375px;
+
+        .nav-list {
+            width: 350px;
+        }
+    }
+
+    body main .drag-drop .separator .scroller .div-btn {
+        position: relative;
+        width: 100%;
+    }
+
+    body header .nav-bar .nav-list .div-collapse .nav-div {
+        width: 150px;
+    }
+
+    body header .nav-bar .nav-list .div-collapse {
+        width: 120px;
+    }
+
+    body header .nav-bar .nav-list .div-collapse .nav-div {
+        right: 2.25rem;
+    }
+
+    body header div .page-img {
+        width: 90%;
+        margin: 0 auto;
+    }
+
+    body main .template .template-div .specifying-image .customize {
+        margin-top: 6rem;
+    }
+
+    body main .template .template-div .specifying-image .customize .option-img-right {
+        bottom: 10.75rem;
+    }
+
+    body main .template .template-div .specifying-image .layout {
+        margin-top: 3rem;
+    }
+
+    body footer .footer-div .footer-list .contact {
+        width: 190px;
+        text-align: center;
+
+        a {
+            align-self: center;
+        }
+    }
+
+    body header .modal-layout .modal-window {
+        height: 480px;
+
+        .modal-content {
+            width: 340px;
+            height: 280px;
+        }
+    }
 }
 
 @media (max-width: 375px) {
     body {
         header {
+            height: 800px;
+
             .nav-bar .nav-list .div-collapse .nav-div {
                 right: 2.5rem;
             }
@@ -1217,21 +1842,96 @@ body {
     }
 
     body header div .page-img {
-        top: 520px;
-        margin-left: 0rem;
+        margin-left: auto;
+        margin-right: auto;
     }
 
+    body main .icons {
+        width: 350px;
+
+        .card {
+            width: 350px;
+        }
+
+    }
+
+    body main .example .text-content .example-text {
+        width: 325px;
+    }
+
+    body header .nav-bar {
+        width: 375px;
+
+        .nav-list {
+            width: 350px;
+        }
+    }
+
+    body main .drag-drop .separator .scroller .div-btn {
+        position: relative;
+        width: 100%;
+    }
+
+    body header .header-div .header-title {
+        font-size: 2.5rem;
+    }
+
+    body main .template .template-div .specifying-image .layout {
+        top: -2rem;
+    }
+
+    body main .template .template-div .specifying-image .customize {
+        top: -3rem;
+    }
+
+    body main .pricing {
+        height: 2100px;
+    }
+
+    body main .pricing .pricing-main .pricing-title {
+        padding-top: 2rem;
+    }
+
+    body main .pricing .pricing-main .pricing-div .pricing-card {
+        width: 300px;
+    }
+
+    body main .pricing .pricing-main .pricing-text {
+        font-size: 1.3rem;
+    }
+
+    body footer .footer-div .footer-list .credentials {
+        font-size: 1.2rem;
+    }
+
+    body footer .footer-div .footer-list .links-div .footer-link {
+        padding: 0.5rem 1rem;
+        font-size: 1.2rem;
+    }
+
+    body main .pricing .pricing-main .pricing-div .pricing-card .card-list .card-item {
+        font-size: 1.1rem;
+    }
+
+    body main .pricing .pricing-main .pricing-div .pricing-card {
+        height: 400px;
+    }
+
+    body footer .footer-div .footer-list .contact {
+        width: 150px;
+        text-align: center;
+
+        a {
+            align-self: center;
+        }
+    }
 }
+
+
 
 @media (max-width: 320px) {
     body {
         header {
-            div .page-img {
-                height: 75%;
-                width: auto;
-                margin-left: -2rem;
-            }
-
             .nav-bar .nav-list .div-collapse .nav-div {
                 right: 1.5rem;
             }
@@ -1248,6 +1948,42 @@ body {
                 margin-top: 2rem;
             }
         }
+    }
+
+    body header .nav-bar .nav-list {
+        width: 300px;
+
+        .logo {
+            width: 120px;
+        }
+    }
+
+    body main .example .text-content {
+        width: 300px;
+    }
+
+    body header .nav-bar {
+        width: 300px;
+    }
+
+    body main .icons {
+        width: 300px;
+
+        .card {
+            width: 300px;
+        }
+    }
+
+    body main .example .text-content .example-list {
+        width: 300px;
+    }
+
+    body main .pricing .pricing-main .pricing-div .pricing-card {
+        width: 260px;
+    }
+
+    body main .example .text-content .example-text {
+        width: 300px;
     }
 
     body main .template .template-div .specifying-image .layout {
@@ -1270,6 +2006,67 @@ body {
 
     body header .modal-layout .modal-window .modal-content .modal-text {
         font-size: 0.9rem;
+    }
+
+    body main .pricing {
+        height: 2000px;
+    }
+
+    body main .template {
+        height: 1485px;
+    }
+
+    body footer {
+        height: 250px;
+        align-items: center;
+        padding-top: 0;
+
+        .footer-div .footer-list {
+
+            font-size: 1.5rem;
+
+
+            .credentials {
+                width: 40%;
+            }
+
+            .links-div {
+                flex-wrap: wrap;
+                width: 35%;
+
+                .footer-link {
+                    padding: 0.5rem 0;
+                    width: 100%;
+                }
+
+                .contact {
+                    width: 100px;
+                    text-align: center;
+
+                    a {
+                        align-self: center;
+                    }
+                }
+            }
+        }
+    }
+
+    body header .modal-layout .modal-window {
+        width: 280px;
+        height: 490px;
+
+        .modal-content {
+            width: 280px;
+            height: 270px;
+
+            .modal-text {
+                font-size: 1.3rem;
+            }
+
+            .modal-title {
+                font-size: 1.8rem;
+            }
+        }
     }
 }
 
