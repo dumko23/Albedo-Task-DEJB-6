@@ -328,7 +328,7 @@ body {
             @include flex(row, space-between);
             @include section-div(100%);
             margin-top: 167px;
-            height: 935px;
+            height: auto;
 
             .text-content {
                 @extend %div-center;
@@ -380,7 +380,7 @@ body {
         .drag-drop {
             @extend %complex-back;
             @include flex(row, none);
-            height: 758px;
+            height: auto;
 
             .separator {
                 @include section-div(90%);
@@ -443,7 +443,7 @@ body {
         }
 
         .template {
-            height: 1135px;
+            height: auto;
 
             .template-div {
                 @include section-div(80%);
@@ -728,6 +728,7 @@ body {
 
     body main .template .template-div .specifying-image {
         width: auto;
+        margin-top: 0;
     }
 
     body main .template .template-div .specifying-image .layout {
@@ -752,8 +753,8 @@ body {
 
 @media (max-width: 1250px) {
     body main .pricing {
-        height: 2000px;
-        padding-top: 8rem;
+        height: auto;
+        padding-top: 0;
 
         .pricing-main {
             height: auto;
@@ -959,7 +960,7 @@ body {
     body main .icons {
         flex-direction: column;
         width: auto;
-        margin-top: 187px;
+        margin-top: 0;
 
         .card {
             width: 90%;
@@ -982,7 +983,7 @@ body {
     }
 
     body main .drag-drop {
-        height: 1000px;
+        height: auto;
 
         .separator {
             flex-direction: column;
@@ -1143,6 +1144,11 @@ body {
                     }
 
                     .customize {
+
+                        .option-title {
+                            padding-top: 1rem;
+                        }
+
                         .option-img-left {
                             width: 180%;
                         }
@@ -1154,6 +1160,7 @@ body {
 
                         .option-img-right {
                             width: 250%;
+                            top: 0;
                         }
                     }
                 }
@@ -1161,7 +1168,7 @@ body {
 
             .pricing .pricing-main {
                 .pricing-title {
-                    font-size: 2rem;
+                    font-size: 3rem;
                 }
 
                 .pricing-div .pricing-card {
@@ -1169,12 +1176,12 @@ body {
                     max-width: 350px;
 
                     .card-list .card-item {
-                        font-size: 0.7rem;
+                        font-size: 1.2rem;
                     }
                 }
 
                 .pricing-text {
-                    font-size: 0.8rem;
+                    font-size: 1.2rem;
                 }
 
                 .invite-btn {
@@ -1252,7 +1259,7 @@ body {
             }
 
             .layout {
-                margin-top: 8rem;
+                margin-top: 7rem;
                 margin-left: 3rem;
                 width: 35%;
                 font-size: 1.4rem;
@@ -1260,20 +1267,22 @@ body {
                 .option-img-left {
                     width: 150%;
                     bottom: -1rem;
+
                 }
             }
 
             .customize {
                 align-self: flex-start;
-                margin-top: 6rem;
+                margin-top: 5rem;
                 margin-left: 3rem;
                 font-size: 1.4rem;
 
                 .option-img-right {
                     transform: rotate(180deg);
-                    bottom: 9.75rem;
+                    bottom: 11.75rem;
                     right: unset;
                     width: 210%;
+                    top: 0;
                 }
 
                 .option-text {
@@ -1291,7 +1300,7 @@ body {
         height: 220px;
 
         .footer-div .footer-list {
-
+            padding-top: 4.5rem;
             font-size: 1.5rem;
 
 
@@ -1333,13 +1342,13 @@ body {
 
 @media (max-width: 697px) {
     body main .template .template-div .specifying-image .layout {
-        margin-top: 5rem;
+        margin-top: 3rem;
     }
 
-    body header .modal-layout .modal-window{
+    body header .modal-layout .modal-window {
         height: 450px;
 
-        .modal-link-div{
+        .modal-link-div {
             margin-top: 2rem;
         }
     }
@@ -1356,6 +1365,12 @@ body {
 
     body main .pricing {
         padding-top: 12rem;
+    }
+}
+
+@media (max-width: 511px){
+    body header div .page-img {
+        margin: 80px auto 0;
     }
 }
 
@@ -1472,6 +1487,10 @@ body {
             width: 90%;
             height: 280px;
         }
+    }
+
+    body main .template .template-div .specifying-image .customize .option-text .right {
+        width: 300px;
     }
 }
 
@@ -1674,15 +1693,18 @@ body {
                         flex-direction: column;
                         justify-content: space-between;
                         font-size: 0.8rem;
+                        height: 570px;
 
                         .option-text {
                             margin: 0;
+                            width: 280px;
                         }
 
                         .layout {
                             margin-top: 0;
                             margin-left: 1rem;
                             width: 40%;
+                            top: 3rem;
 
                             .option-img-left {
                                 width: 150%;
@@ -1694,6 +1716,7 @@ body {
                             align-self: flex-start;
                             margin-top: 0;
                             margin-left: 1rem;
+                            top: 4rem;
 
                             .option-img-right {
                                 transform: rotate(180deg);
@@ -1708,10 +1731,6 @@ body {
                         }
                     }
                 }
-            }
-
-            body main .template .template-div .specifying-image .layout {
-                margin-top: 60px;
             }
 
             .pricing {
@@ -1793,7 +1812,11 @@ body {
     }
 
     body main .pricing {
-        padding-top: 14rem;
+        padding-top: 0;
+    }
+
+    body main .template .template-div .specifying-image .customize .right {
+        width: 300px;
     }
 
     body header div .page-img {
@@ -1801,10 +1824,6 @@ body {
         height: auto;
         top: 460px;
         margin-left: 0rem;
-    }
-
-    body main .template .template-div .specifying-image .layout {
-        margin-top: 70px;
     }
 
     body main .drag-drop .separator {
@@ -1864,15 +1883,16 @@ body {
     }
 
     body main .template .template-div .specifying-image .customize {
-        margin-top: 6rem;
+        margin-top: 5rem;
+
+    }
+
+    body main .template .template-div .specifying-image .customize .option-title {
+        padding-top: 1rem;
     }
 
     body main .template .template-div .specifying-image .customize .option-img-right {
         bottom: 10.75rem;
-    }
-
-    body main .template .template-div .specifying-image .layout {
-        margin-top: 3rem;
     }
 
     body footer .footer-div .footer-list .contact {
@@ -1894,8 +1914,18 @@ body {
             align-items: center;
             margin-left: auto;
             margin-right: auto;
-            
+
         }
+    }
+}
+
+@media (max-width: 387px) {
+    body main .template .template-div .specifying-image .layout {
+        top: 1.5rem;
+    }
+
+    body main .template .template-div .specifying-image .customize {
+        top: 1.5rem;
     }
 }
 
@@ -1919,11 +1949,12 @@ body {
                 margin-top: 4rem;
 
                 .layout {
-                    top: -1rem;
+                    top: 1rem;
                 }
 
                 .customize {
-                    top: 0;
+                    top: 2rem;
+
                 }
             }
         }
@@ -1964,20 +1995,8 @@ body {
         font-size: 2.5rem;
     }
 
-    body main .template .template-div .specifying-image .layout {
-        top: -2rem;
-    }
-
-    body main .template .template-div .specifying-image .customize {
-        top: -3rem;
-    }
-
     body main .pricing {
-        height: 2100px;
-    }
-
-    body main .pricing .pricing-main .pricing-title {
-        padding-top: 2rem;
+        height: auto;
     }
 
     body main .pricing .pricing-main .pricing-text {
@@ -2025,11 +2044,28 @@ body {
 
 }
 
+@media (max-width: 360px) {
+    body main .template .template-div .specifying-image {
+        margin-top: 0;
+    }
 
+    body main .template .template-div .specifying-image .layout {
+        top: 6rem;
+    }
+
+    body main .template .template-div .specifying-image .customize {
+        top: 6rem;
+    }
+
+    body main .template .template-div .specifying-image .layout .option-title {
+        width: 280px;
+    }
+}
 
 @media (max-width: 320px) {
     body {
         header {
+            height: 770px;
 
             .header-div {
                 margin-top: 5rem;
@@ -2046,11 +2082,15 @@ body {
                 height: auto;
                 top: 380px;
             }
-
-            .pricing {
-                margin-top: 2rem;
-            }
         }
+    }
+
+    body main .pricing .pricing-main .pricing-div .pricing-card .card-list .card-item {
+        font-size: 0.9rem;
+    }
+
+    body footer .footer-div .footer-list {
+        padding-top: 3.5rem;
     }
 
     body header .nav-bar .nav-list {
@@ -2077,18 +2117,18 @@ body {
         }
     }
 
-    body main .example .text-content .example-list ,
-    body main .pricing .pricing-main .pricing-div .pricing-card ,
+    body main .example .text-content .example-list,
+    body main .pricing .pricing-main .pricing-div .pricing-card,
     body main .example .text-content .example-text {
         width: 90%;
     }
 
     body main .template .template-div .specifying-image .layout {
-        top: -5.5rem;
+        top: 6.5rem;
     }
 
     body main .template .template-div .specifying-image .customize {
-        top: -7.5rem;
+        top: 5.5rem;
     }
 
     body header .modal-layout .modal-window {
@@ -2106,11 +2146,11 @@ body {
     }
 
     body main .pricing {
-        height: 2000px;
+        height: auto;
     }
 
     body main .template {
-        height: 1485px;
+        height: auto;
     }
 
     body footer {
