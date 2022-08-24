@@ -92,7 +92,7 @@ body {
         height: 1100px;
 
         .nav-bar {
-            @include section-div(1688px);
+            @include section-div(80%);
             padding-top: 67px;
 
             .nav-list {
@@ -107,7 +107,8 @@ body {
                 }
 
                 .div-collapse {
-                    width: 694px;
+                    width: 80%;
+                    max-width: 694px;
 
                     .menu {
                         display: none;
@@ -145,7 +146,7 @@ body {
         }
 
         .header-div {
-            @include section-div(864px);
+            @include section-div(auto);
             @include flex(column, center);
             margin-top: 146px;
 
@@ -275,7 +276,7 @@ body {
 
         .icons {
             @include flex(row, space-evenly);
-            @include section-div(1347px);
+            @include section-div(auto);
             margin-top: 257px;
             padding-top: 5rem;
 
@@ -330,10 +331,11 @@ body {
             height: 935px;
 
             .text-content {
+                @extend %div-center;
                 text-align: start;
-                width: 651px;
+                width: 30%;
                 margin-right: 2rem;
-                margin-left: 282px;
+                margin-left: 10vw;
                 margin-top: 80px;
 
 
@@ -345,7 +347,7 @@ body {
                 .example-text {
                     @extend %text-main-color;
                     margin: 2rem 0;
-                    width: 577px;
+                    width: auto;
                 }
 
                 .example-list {
@@ -369,7 +371,7 @@ body {
 
 
                 img {
-                    width: 1047px;
+                    width: auto;
                     height: auto;
                 }
             }
@@ -397,9 +399,9 @@ body {
 
                 .scroller {
                     @include flex(column, space-between);
-                    margin-right: 339px;
+                    margin-right: 15vw;
                     margin-left: 3rem;
-                    width: 500px;
+                    width: auto;
                     margin-bottom: 99px;
 
                     .slide-bar {
@@ -470,7 +472,7 @@ body {
                     background-size: 65%;
                     background-repeat: no-repeat;
                     height: 681px;
-                    width: 1488px;
+                    width: auto;
 
                     .option-title {
                         font-size: 1.5rem;
@@ -659,49 +661,73 @@ body {
     }
 }
 
+@media (max-width: 1890px) {
+    body main .example .text-content {
+        margin-left: 5vw;
+    }
+
+    body main .drag-drop .separator .scroller {
+        margin-right: 5vw;
+    }
+
+    body main .drag-drop .separator .dashboard-div .dashboard-img {
+        width: auto;
+        max-width: 700px;
+    }
+
+    body main .drag-drop .separator .scroller .slide-bar .slide-div {
+        margin-top: 209px;
+    }
+}
+
 
 @media (max-width: 1440px) {
 
     body header .nav-bar {
-        width: 1188px;
+        width: 80%;
+        max-width: 1188px;
     }
 
     body main .icons {
-        width: 1147px;
+        width: auto;
+    }
+
+    body main .example {
+        height: auto;
     }
 
     body main .example .text-content {
         text-align: start;
-        width: 451px;
-        margin-left: 102px;
+        width: auto;
+        margin-left: 52px;
         margin-top: 40px;
+        height: auto;
     }
 
     body main .example .img-left img {
-        width: 760px;
+        width: auto;
+        max-width: 740px;
         height: auto;
     }
 
     body main .example .text-content .example-text {
         margin: 2rem 0;
-        width: 451px;
+        width: auto;
     }
 
-    body main .example {
-        height: 728px;
-    }
 
     body main .drag-drop .separator .dashboard-div .dashboard-img {
-        width: 680px;
+        width: auto;
+        max-width: 550px;
     }
 
     body main .drag-drop .separator .scroller {
-        margin-right: 154px;
+        margin-right: 0;
         margin-bottom: 0;
     }
 
     body main .template .template-div .specifying-image {
-        width: 1088px;
+        width: auto;
     }
 
     body main .template .template-div .specifying-image .layout {
@@ -712,18 +738,91 @@ body {
         width: 321px;
         height: 403px;
     }
+
+    body main .template .template-div .template-text {
+        display: block;
+        margin-top: 2rem;
+        width: auto;
+    }
+
+    body main .drag-drop .separator .scroller .slide-bar .slide-div {
+        margin-top: 190px;
+    }
+}
+
+@media (max-width: 1250px) {
+    body main .pricing {
+        height: 2000px;
+        padding-top: 8rem;
+
+        .pricing-main {
+            height: auto;
+
+            .pricing-title {
+                font-size: 3rem;
+
+            }
+
+            .pricing-div {
+                flex-direction: column;
+                justify-content: center;
+
+                .pricing-card {
+                    width: 500px;
+                    margin: 2rem auto;
+                    height: 450px;
+
+                    .pricing-card-title {
+                        font-size: 2rem;
+                    }
+
+                    .price-text {
+                        font-size: 2rem;
+
+                        .dollar {
+                            font-size: 3rem;
+                        }
+
+                        .price {
+                            font-size: 4rem;
+                        }
+                    }
+
+                    .card-list .card-item {
+                        font-size: 1.5rem;
+                    }
+                }
+            }
+
+            .pricing-text {
+                margin-top: 2rem;
+                font-size: 1.5rem;
+            }
+
+            .invite-btn {
+                font-size: 1.5rem;
+            }
+        }
+    }
 }
 
 
-
-
 @media (max-width: 1024px) {
-    body main .drag-drop .separator .scroller .slide-bar {
-        line-height: 1.1;
+    body main .drag-drop {
+        height: 600px;
 
-        .slide-title {
-            font-size: 2rem;
+        .separator .scroller {
+
+
+            .slide-bar {
+                line-height: 1.1;
+
+                .slide-title {
+                    font-size: 2rem;
+                }
+            }
         }
+
     }
 
     body main .example .text-content {
@@ -751,7 +850,8 @@ body {
     }
 
     body main .example .img-left img {
-        width: 600px;
+        width: auto;
+        max-width: 450px;
     }
 
     body main .example .img-left img {
@@ -759,7 +859,7 @@ body {
     }
 
     body header .nav-bar {
-        width: 908px;
+        width: 80%;
 
         .nav-list .div-collapse {
             width: 494px;
@@ -767,7 +867,7 @@ body {
     }
 
     body main .icons {
-        width: 1024px;
+        width: auto;
 
         .card {
             width: 280px;
@@ -775,7 +875,8 @@ body {
     }
 
     body main .drag-drop .separator .dashboard-div .dashboard-img {
-        width: 540px;
+        width: auto;
+        max-width: 420px;
     }
 
     body main .drag-drop .separator .scroller {
@@ -787,11 +888,11 @@ body {
     }
 
     body main .template .template-div .specifying-image {
-        width: 860px;
+        width: auto;
     }
 
     body main .template .template-div .template-text {
-        width: 788px;
+        width: auto;
     }
 
     body main .template .template-div .specifying-image .layout {
@@ -799,7 +900,8 @@ body {
     }
 
     body main .pricing .pricing-main .pricing-div .pricing-card {
-        width: 251px;
+        width: 60%;
+        max-width: 500px;
         height: 383px;
 
         .card-list .card-item {
@@ -808,8 +910,166 @@ body {
         }
     }
 
+    body header div .page-img {
+        width: 80%;
+    }
+}
 
+@media (max-width: 900px) {
+    body main .example {
+        flex-direction: column;
+        margin-top: 2rem;
+        height: 1000px;
 
+        .text-content {
+            margin-left: 3rem;
+            width: auto;
+            text-align: center;
+
+            .example-title {
+                display: block;
+                margin: 0 auto;
+                font-size: 3rem;
+                text-align: center;
+            }
+
+            .example-text {
+                width: auto;
+                font-size: 1.5rem;
+                text-align: center;
+            }
+
+            .example-list .list-item {
+                font-size: 1.5rem;
+                text-align: center;
+            }
+        }
+
+        .img-left {
+            align-self: flex-end;
+
+            img {
+                margin-top: 0;
+                width: 80vw;
+                max-width: 740px;
+            }
+        }
+    }
+
+    body main .icons {
+        flex-direction: column;
+        width: auto;
+        margin-top: 187px;
+
+        .card {
+            width: 90%;
+            margin: 1rem auto;
+
+            div .icon-img {
+                width: 120px;
+                height: 116px;
+            }
+
+            .icon-title {
+                padding-bottom: 0.25rem;
+                font-size: 34px;
+            }
+        }
+    }
+
+    body main .template .template-div {
+        width: 90%;
+    }
+
+    body main .drag-drop {
+        height: 1000px;
+
+        .separator {
+            flex-direction: column;
+
+            .dashboard-div {
+                margin-top: 0;
+                align-self: center;
+
+                .dashboard-img {
+                    width: auto;
+                    max-width: 720px;
+                }
+            }
+
+            .scroller {
+                width: 100%;
+                height: 300px;
+                margin-left: 0;
+
+                .slide-bar .slide-div {
+                    margin-top: 0;
+                    text-align: center;
+
+                    .slide-title {
+                        font-size: 3rem;
+                    }
+
+                    .slide-text {
+                        font-size: 1.5rem;
+                    }
+                }
+
+                .div-btn {
+                    margin: 0 auto;
+                }
+            }
+        }
+    }
+
+    body header .nav-bar .nav-list {
+
+        .div-collapse {
+            @include flex(none, center);
+            align-self: center;
+            width: 200px;
+
+            .menu {
+                display: flex;
+                align-items: center;
+
+                .fa-solid {
+                    font-size: 2rem;
+                    width: 2rem;
+                }
+            }
+
+            .nav-div {
+                @include flex(column, center);
+                text-align: center;
+                width: auto;
+                position: absolute;
+                background-color: $color-dark-blue;
+                border: 1px solid $color-light-blue;
+                padding: 2rem;
+                margin-top: 3rem;
+
+                li {
+                    margin-bottom: 1rem;
+                }
+
+                .nav-link {
+                    text-align: center;
+                    margin-bottom: 1rem;
+                }
+
+                .login-btn {
+                    margin: 0;
+                    text-align: center;
+                    padding: 0.45rem 0.85rem;
+                }
+            }
+
+            .nav-div {
+                display: none;
+            }
+        }
+    }
 }
 
 @media (max-width: 768px) {
@@ -835,54 +1095,19 @@ body {
         }
 
         main {
-            .example {
-                margin-top: 10rem;
-                margin-bottom: 2rem;
-
-                .text-content {
-                    width: 40%;
-                    margin-left: 3rem;
-
-                    .example-title {
-                        font-size: 2rem;
-                    }
-
-                    .example-text {
-                        font-size: 0.9rem;
-                        margin: 1rem 0;
-                    }
-
-                    .example-list .list-item {
-                        font-size: 0.8rem;
-                        margin: 0;
-
-                        .fa-circle-check {
-                            font-size: 0.8rem;
-                        }
-                    }
-                }
-
-                .img-left img {
-                    width: 50%;
-                    height: auto;
-                    margin-top: 3rem;
-                }
-            }
-
             .drag-drop .separator {
                 width: 95%;
 
 
                 .dashboard-div .dashboard-img {
-                    width: 90%;
+                    width: 100%;
                     height: auto;
                 }
-
 
                 .scroller {
                     margin-right: 0rem;
                     margin-left: 0rem;
-                    width: 90%;
+                    width: 100%;
 
                     .slide-bar {
                         .slide-title {
@@ -940,7 +1165,8 @@ body {
                 }
 
                 .pricing-div .pricing-card {
-                    width: 175px;
+                    width: 90%;
+                    max-width: 350px;
 
                     .card-list .card-item {
                         font-size: 0.7rem;
@@ -959,37 +1185,17 @@ body {
     }
 
     body header .nav-bar {
-        width: 688px;
+        width: 80%;
     }
 
     body header .header-div {
-        width: 600px;
+        width: 80%;
     }
 
     body header div .page-img {
         margin-right: 0;
-        width: 600px;
+        width: 80%;
         margin: 160px auto 0
-    }
-
-    body main .icons {
-        flex-direction: column;
-        width: 708px;
-
-        .card {
-            width: 500px;
-            margin: 0 auto;
-
-            div .icon-img {
-                width: 120px;
-                height: 116px;
-            }
-
-            .icon-title {
-                padding-bottom: 0.25rem;
-                font-size: 34px;
-            }
-        }
     }
 
     body header .header-div .header-title {
@@ -1023,133 +1229,11 @@ body {
         font-size: 28px;
     }
 
-    body header .nav-bar .nav-list {
-
-        .div-collapse {
-            @include flex(none, center);
-            align-self: center;
-            width: 200px;
-
-            .menu {
-                display: flex;
-                align-items: center;
-
-                .fa-solid {
-                    font-size: 2rem;
-                    width: 2rem;
-                }
-            }
-
-            .nav-div {
-                @include flex(column, center);
-                text-align: center;
-                width: auto;
-                position: absolute;
-                background-color: $color-dark-blue;
-                border: 1px solid $color-light-blue;
-                padding: 2rem;
-                margin-top: 3rem;
-
-                li {
-                    margin-bottom: 1rem;
-                }
-
-                .nav-link {
-                    text-align: center;
-                    margin-bottom: 1rem;
-                }
-
-                .login-btn {
-                    margin: 0;
-                    text-align: center;
-                    padding: 0.45rem 0.85rem;
-                }
-            }
-
-            .nav-div {
-                display: none;
-            }
-        }
-    }
-
-    body main .example {
-        flex-direction: column;
-        margin-top: 2rem;
-        height: 1000px;
-
-        .text-content {
-            margin-left: 3rem;
-            width: 700px;
-            text-align: center;
-
-            .example-title {
-                display: block;
-                margin: 0 auto;
-                font-size: 3rem;
-            }
-
-            .example-text {
-                width: 700px;
-                font-size: 1.5rem;
-            }
-
-            .example-list .list-item {
-                font-size: 1.5rem;
-            }
-        }
-
-        .img-left {
-            align-self: end;
-
-            img {
-                width: 100%;
-            }
-        }
-    }
-
-    body main .drag-drop {
-        height: 1000px;
-
-        .separator {
-            flex-direction: column;
-
-            .dashboard-div {
-                margin-top: 0;
-
-                .dashboard-img {
-                    width: 100%;
-                }
-            }
-
-            .scroller {
-                width: 100%;
-                height: 300px;
-
-                .slide-bar .slide-div {
-                    margin-top: 0;
-                    text-align: center;
-
-                    .slide-title {
-                        font-size: 3rem;
-                    }
-
-                    .slide-text {
-                        font-size: 1.5rem;
-                    }
-                }
-
-                .div-btn {
-                    margin: 0 auto;
-                }
-            }
-        }
-    }
-
     body main .template .template-div {
         width: 100%;
 
         .template-text {
-            width: 586px;
+            width: 80%;
             font-size: 1.5rem;
         }
 
@@ -1181,7 +1265,7 @@ body {
 
             .customize {
                 align-self: flex-start;
-                margin-top: 7rem;
+                margin-top: 6rem;
                 margin-left: 3rem;
                 font-size: 1.4rem;
 
@@ -1193,7 +1277,7 @@ body {
                 }
 
                 .option-text {
-                    width: 300px;
+                    width: 90%;
                 }
 
                 .right {
@@ -1203,62 +1287,8 @@ body {
         }
     }
 
-    body main .pricing {
-        height: 2000px;
-        padding-top: 8rem;
-
-        .pricing-main {
-            height: auto;
-
-            .pricing-title {
-                font-size: 3rem;
-
-            }
-
-            .pricing-div {
-                flex-direction: column;
-                justify-content: center;
-
-                .pricing-card {
-                    width: 500px;
-                    margin: 2rem auto;
-                    height: 450px;
-
-                    .pricing-card-title {
-                        font-size: 2rem;
-                    }
-
-                    .price-text {
-                        font-size: 2rem;
-
-                        .dollar {
-                            font-size: 3rem;
-                        }
-
-                        .price {
-                            font-size: 4rem;
-                        }
-                    }
-
-                    .card-list .card-item {
-                        font-size: 1.5rem;
-                    }
-                }
-            }
-
-            .pricing-text {
-                margin-top: 2rem;
-                font-size: 1.5rem;
-            }
-
-            .invite-btn {
-                font-size: 1.5rem;
-            }
-        }
-    }
-
     body footer {
-        height: 160px;
+        height: 220px;
 
         .footer-div .footer-list {
 
@@ -1296,12 +1326,58 @@ body {
         }
     }
 
+    body header .modal-layout .modal-window {
+        width: 90%;
+    }
+}
 
+@media (max-width: 697px) {
+    body main .template .template-div .specifying-image .layout {
+        margin-top: 5rem;
+    }
+
+    body header .modal-layout .modal-window{
+        height: 450px;
+
+        .modal-link-div{
+            margin-top: 2rem;
+        }
+    }
+}
+
+@media (max-width: 576px) {
+    body header {
+        height: 1000px
+    }
+
+    body main .template .template-div .specifying-image .layout {
+        margin-top: 2rem;
+    }
+
+    body main .pricing {
+        padding-top: 12rem;
+    }
+}
+
+@media (max-width: 498px) {
+    body main .pricing {
+        padding-top: 19rem;
+    }
+}
+
+@media (max-width: 442px) {
+    body main .pricing {
+        padding-top: 24rem;
+    }
 }
 
 @media (max-height: 1000px) and (max-width: 425px) {
     body header {
-        height: 700px;
+        height: 400px;
+    }
+
+    body main .pricing {
+        padding-top: 14rem;
     }
 
 
@@ -1354,7 +1430,7 @@ body {
     }
 
     body footer {
-        height: 200px;
+        height: 240px;
         align-items: center;
         padding-top: 0;
 
@@ -1390,9 +1466,10 @@ body {
 
     body header .modal-layout .modal-window {
         height: 480px;
+        width: 90%;
 
         .modal-content {
-            width: 340px;
+            width: 90%;
             height: 280px;
         }
     }
@@ -1401,6 +1478,8 @@ body {
 @media (max-width: 425px) {
     body {
         header {
+            height: 750px;
+
             .nav-bar {
                 .nav-list {
                     .logo {
@@ -1678,7 +1757,7 @@ body {
         }
 
         body footer {
-            height: 220px;
+            height: 240px;
             align-items: center;
             padding-top: 0;
 
@@ -1711,6 +1790,10 @@ body {
                 }
             }
         }
+    }
+
+    body main .pricing {
+        padding-top: 14rem;
     }
 
     body header div .page-img {
@@ -1803,10 +1886,15 @@ body {
 
     body header .modal-layout .modal-window {
         height: 480px;
+        width: 90%;
 
         .modal-content {
-            width: 340px;
+            width: 90%;
             height: 280px;
+            align-items: center;
+            margin-left: auto;
+            margin-right: auto;
+            
         }
     }
 }
@@ -1847,23 +1935,23 @@ body {
     }
 
     body main .icons {
-        width: 350px;
+        width: auto;
 
         .card {
-            width: 350px;
+            width: 90%;
         }
 
     }
 
     body main .example .text-content .example-text {
-        width: 325px;
+        width: auto;
     }
 
     body header .nav-bar {
-        width: 375px;
+        width: 80%;
 
         .nav-list {
-            width: 350px;
+            width: auto;
         }
     }
 
@@ -1892,10 +1980,6 @@ body {
         padding-top: 2rem;
     }
 
-    body main .pricing .pricing-main .pricing-div .pricing-card {
-        width: 300px;
-    }
-
     body main .pricing .pricing-main .pricing-text {
         font-size: 1.3rem;
     }
@@ -1915,16 +1999,30 @@ body {
 
     body main .pricing .pricing-main .pricing-div .pricing-card {
         height: 400px;
+        width: 100%;
     }
 
-    body footer .footer-div .footer-list .contact {
-        width: 150px;
-        text-align: center;
+    body footer {
+        height: 260px;
 
-        a {
-            align-self: center;
+        .footer-div .footer-list {
+            padding-top: 1.5rem;
+
+            .credentials {
+                margin: auto 0;
+            }
+
+            .contact {
+                width: 150px;
+                text-align: center;
+
+                a {
+                    align-self: center;
+                }
+            }
         }
     }
+
 }
 
 
@@ -1932,6 +2030,11 @@ body {
 @media (max-width: 320px) {
     body {
         header {
+
+            .header-div {
+                margin-top: 5rem;
+            }
+
             .nav-bar .nav-list .div-collapse .nav-div {
                 right: 1.5rem;
             }
@@ -1951,51 +2054,45 @@ body {
     }
 
     body header .nav-bar .nav-list {
-        width: 300px;
+        width: 90%;
 
         .logo {
-            width: 120px;
+            width: 90%;
         }
     }
 
     body main .example .text-content {
-        width: 300px;
+        width: 90%;
     }
 
     body header .nav-bar {
-        width: 300px;
+        width: 80%;
     }
 
     body main .icons {
-        width: 300px;
+        width: 90%;
 
         .card {
-            width: 300px;
+            width: 90%;
         }
     }
 
-    body main .example .text-content .example-list {
-        width: 300px;
-    }
-
-    body main .pricing .pricing-main .pricing-div .pricing-card {
-        width: 260px;
-    }
-
+    body main .example .text-content .example-list ,
+    body main .pricing .pricing-main .pricing-div .pricing-card ,
     body main .example .text-content .example-text {
-        width: 300px;
+        width: 90%;
     }
 
     body main .template .template-div .specifying-image .layout {
-        top: -2.5rem;
+        top: -5.5rem;
     }
 
     body main .template .template-div .specifying-image .customize {
-        top: -1.5rem;
+        top: -7.5rem;
     }
 
     body header .modal-layout .modal-window {
-        width: 280px;
+        width: 90%;
         height: 390px;
     }
 
